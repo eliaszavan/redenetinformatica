@@ -14,3 +14,4 @@ menuLinks.forEach(link => {
         menuToggle.classList.remove('open');
     });
 });
+

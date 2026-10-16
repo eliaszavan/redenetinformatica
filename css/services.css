@@ -1,0 +1,368 @@
+/* SERVIÇOS */
+
+.services {
+    width: 100%;
+
+    padding: 38px 24px 34px;
+
+    background-color: var(--white);
+}
+
+.servicesTitle {
+    text-align: center;
+}
+
+.servicesTitle span {
+    color: var(--green);
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.servicesTitle h2 {
+    margin-top: 10px;
+
+    color: var(--black);
+
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.titleLine {
+    display: none;
+}
+
+
+/* CARROSSEL */
+
+.servicesCarousel {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 40px auto 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+}
+
+.servicesSlider {
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+}
+
+.servicesTrack {
+    display: flex;
+
+    gap: 24px;
+
+    transition: transform 0.4s ease-in-out;
+}
+
+
+/* CARD */
+
+.serviceCard {
+    min-width: calc((100% - 48px) / 3);
+
+    flex-shrink: 0;
+
+    padding: 0 22px;
+}
+
+.serviceText {
+    min-width: 0;
+}
+
+.serviceIcon img {
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+
+    color: var(--green);
+}
+
+.serviceIcon i {
+    font-size: 42px;
+    font-weight: 400;
+}
+
+.serviceCard h3 {
+    margin-top: 14px;
+
+    color: var(--black);
+
+    font-size: 17px;
+}
+
+.serviceCard p {
+    max-width: 270px;
+
+    margin-top: 10px;
+
+    color: #303030;
+
+    font-size: 14px;
+    line-height: 1.55;
+
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+.serviceCard a {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-top: 16px;
+
+    text-decoration: none;
+    color: var(--green);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.serviceCard a i {
+    font-size: 11px;
+}
+
+
+/* SETAS */
+
+.serviceArrow {
+    width: 32px;
+
+    flex-shrink: 0;
+
+    background: transparent;
+    border: none;
+
+    color: var(--green);
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.serviceArrow:hover {
+    color: var(--darkGreen);
+
+    transform: scale(1.1);
+}
+
+
+/* DOTS */
+
+.serviceDots {
+    margin-top: 26px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+}
+
+.serviceDot {
+    width: 9px;
+    height: 9px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #cccccc;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.serviceDot.active {
+    background-color: var(--green);
+
+    transform: scale(1.25);
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 1200px) {
+
+    .servicesCarousel {
+        max-width: 900px;
+    }
+
+    .servicesTrack {
+        gap: 24px;
+    }
+
+    .serviceCard {
+        min-width: calc((100% - 24px) / 2);
+
+        padding: 0 32px;
+    }
+
+    .serviceCard p {
+        max-width: 320px;
+    }
+}
+
+
+@media (max-width: 968px) {
+
+    .services {
+        padding: 46px 32px 20px;
+    }
+
+    .servicesTitle h2 {
+        font-size: 30px;
+    }
+
+    .titleLine {
+        width: 58px;
+        height: 2px;
+
+        display: block;
+
+        margin: 22px auto 0;
+
+        background-color: var(--green);
+    }
+
+    .servicesCarousel {
+        max-width: 720px;
+
+        margin-top: 12px;
+
+        gap: 14px;
+    }
+
+    .servicesSlider {
+        width: 100%;
+        max-width: 620px;
+
+        margin: 0 auto;
+    }
+
+    .servicesTrack {
+        gap: 0;
+    }
+
+    .serviceCard {
+        min-width: 100%;
+        min-height: 158px;
+
+        display: grid;
+
+        grid-template-columns: 115px 1fr;
+
+        align-items: center;
+
+        gap: 28px;
+
+        padding: 20px 8px;
+
+        border-bottom: 1px solid #dddddd;
+    }
+
+    .serviceCard:last-child {
+        border-bottom: none;
+    }
+
+    .serviceIcon {
+        height: auto;
+
+        justify-content: center;
+    }
+
+    .serviceIcon i {
+        font-size: 58px;
+    }
+
+    .serviceCard h3 {
+        margin-top: 0;
+
+        font-size: 19px;
+    }
+
+    .serviceCard p {
+        max-width: 390px;
+
+        font-size: 15px;
+    }
+
+    .serviceCard a {
+        margin-top: 10px;
+
+        font-size: 15px;
+    }
+
+    .serviceArrow {
+        font-size: 26px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .services {
+        padding: 42px 20px 20px;
+    }
+
+    .servicesTitle span {
+        font-size: 12px;
+    }
+
+    .servicesTitle h2 {
+        margin-top: 8px;
+
+        font-size: 25px;
+    }
+
+    .servicesCarousel {
+        gap: 8px;
+    }
+
+    .serviceCard {
+        min-height: 148px;
+
+        grid-template-columns: 82px 1fr;
+
+        gap: 20px;
+
+        padding: 20px 0;
+    }
+
+    .serviceIcon i {
+        font-size: 49px;
+    }
+
+    .serviceCard h3 {
+        font-size: 18px;
+    }
+
+    .serviceCard p {
+        max-width: 100%;
+
+        font-size: 14px;
+    }
+
+    .serviceArrow {
+        font-size: 22px;
+    }
+
+    .serviceDots {
+        margin-top: 18px;
+    }
+}

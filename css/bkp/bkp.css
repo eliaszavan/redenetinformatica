@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,8 +6,8 @@
 }
 
 html {
-    scroll-behavior: smooth;
-}
+  scroll-behavior: smooth;
+}   
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -184,6 +185,7 @@ header {
 
     margin: 0 auto;
     padding-left: 72px;
+
     color: var(--white);
 }
 
@@ -231,6 +233,7 @@ header {
     gap: 8px;
 
     text-decoration: none;
+
     font-size: 15px;
     font-weight: 600;
 
@@ -298,13 +301,46 @@ header {
     display: none;
 }
 
-.servicesGrid {
-    max-width: 1320px;
+
+/* CARROSSEL DE SERVIÇOS */
+
+.servicesCarousel {
+    width: 100%;
+    max-width: 1200px;
+
     margin: 40px auto 0;
 
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 48px;
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+}
+
+.servicesSlider {
+    width: 100%;
+    min-width: 0;
+
+    overflow: hidden;
+}
+
+.servicesTrack {
+    display: flex;
+
+    gap: 24px;
+
+    transition: transform 0.4s ease-in-out;
+}
+
+.serviceCard {
+    min-width: calc((100% - 48px) / 3);
+
+    flex-shrink: 0;
+
+    padding: 0 22px;
+}
+
+.serviceText {
+    min-width: 0;
 }
 
 .serviceIcon img {
@@ -330,17 +366,23 @@ header {
 }
 
 .serviceCard p {
+    max-width: 270px;
+
     margin-top: 10px;
 
     color: #303030;
 
     font-size: 14px;
     line-height: 1.55;
+
+    white-space: normal;
+    overflow-wrap: break-word;
 }
 
 .serviceCard a {
     display: inline-flex;
     align-items: center;
+
     gap: 8px;
 
     margin-top: 16px;
@@ -356,11 +398,268 @@ header {
     font-size: 11px;
 }
 
+.serviceArrow {
+    width: 32px;
+
+    flex-shrink: 0;
+
+    background: transparent;
+    border: none;
+
+    color: var(--green);
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.serviceArrow:hover {
+    color: var(--darkGreen);
+
+    transform: scale(1.1);
+}
+
+.serviceDots {
+    margin-top: 26px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+}
+
+.serviceDot {
+    width: 9px;
+    height: 9px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #cccccc;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.serviceDot.active {
+    background-color: var(--green);
+
+    transform: scale(1.25);
+}
+
+
+/* AVALIACOES */
+/* AVALIACOES */
+/* AVALIACOES */
+/* AVALIACOES */
+/* AVALIACOES */
+
+.reviews {
+    width: 100%;
+
+    padding: 70px 20px;
+
+    background-color: #f5f5f5;
+}
+
+.reviewsContainer {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+}
+
+.reviewsSlider {
+    width: 100%;
+
+    overflow: hidden;
+
+    padding: 15px 5px;
+}
+
+.reviewsTrack {
+    display: flex;
+
+    gap: 24px;
+
+    transition: transform 0.4s ease-in-out;
+}
+
+.reviewCard {
+    min-width: calc((100% - 48px) / 3);
+
+    background-color: var(--white);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.reviewTop {
+    height: 160px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--green);
+
+    position: relative;
+}
+
+.reviewPerson {
+    width: 115px;
+    height: 115px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 4px solid var(--white);
+
+    position: absolute;
+
+    bottom: -25px;
+}
+
+.reviewContent {
+    min-height: 245px;
+
+    padding: 42px 30px 25px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+.reviewContent h3 {
+    font-size: 18px;
+
+    color: var(--black);
+
+    margin-bottom: 8px;
+}
+
+.reviewStars {
+    display: flex;
+
+    gap: 3px;
+
+    margin-bottom: 14px;
+
+    color: var(--green);
+}
+
+.reviewStars i {
+    font-size: 14px;
+}
+
+.reviewContent p {
+    font-size: 14px;
+    line-height: 1.6;
+
+    color: #666666;
+}
+
+.reviewLogo {
+    width: 42px;
+    height: 42px;
+
+    object-fit: contain;
+
+    margin-top: auto;
+
+    opacity: 0.18;
+}
+
+.reviewArrow {
+    background: transparent;
+    border: none;
+
+    color: var(--green);
+
+    font-size: 34px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.reviewArrow:hover {
+    color: var(--darkGreen);
+
+    transform: scale(1.1);
+}
+
+.reviewDots {
+    margin-top: 25px;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 8px;
+}
+
+.reviewDot {
+    width: 10px;
+    height: 10px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #cccccc;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.reviewDot.active {
+    background-color: var(--green);
+
+    transform: scale(1.2);
+}
+
+
+@media (max-width: 968px) {
+
+    .reviews {
+        padding: 50px 15px;
+    }
+
+    .reviewsContainer {
+        gap: 12px;
+    }
+
+    .reviewCard {
+        min-width: 100%;
+    }
+
+    .reviewArrow {
+        font-size: 28px;
+    }
+}
+
 
 /* WHATSAPP FLUTUANTE */
 
 .floatingWhatsapp {
     position: fixed;
+
     right: 28px;
     bottom: 28px;
 
@@ -372,6 +671,7 @@ header {
     justify-content: center;
 
     text-decoration: none;
+
     color: var(--white);
     background-color: #2fbf35;
 
@@ -390,6 +690,7 @@ header {
 
 .floatingWhatsapp:hover {
     transform: translateY(-3px);
+
     background-color: var(--darkGreen);
 }
 
@@ -407,6 +708,7 @@ header {
 /* RESPONSIVIDADE */
 /* RESPONSIVIDADE */
 
+
 @media (max-width: 1200px) {
 
     .navRight {
@@ -417,17 +719,38 @@ header {
         gap: 28px;
     }
 
-    .servicesGrid {
-        gap: 28px;
+
+    /* SERVIÇOS */
+
+    .servicesCarousel {
+        max-width: 900px;
+    }
+
+    .servicesTrack {
+        gap: 24px;
+    }
+
+    .serviceCard {
+        min-width: calc((100% - 24px) / 2);
+
+        padding: 0 32px;
+    }
+
+    .serviceCard p {
+        max-width: 320px;
     }
 }
+
 
 @media (max-width: 968px) {
 
     .info {
         height: auto;
+
         flex-direction: column;
+
         gap: 8px;
+
         padding: 14px 20px;
     }
 
@@ -444,7 +767,9 @@ header {
 
     .navBar {
         position: relative;
+
         height: 100px;
+
         padding: 0 20px;
 
         display: flex;
@@ -463,12 +788,14 @@ header {
         height: 100px;
 
         object-fit: contain;
+
         flex-shrink: 0;
     }
 
     .navRight {
         display: flex;
         align-items: center;
+
         gap: 16px;
     }
 
@@ -480,6 +807,7 @@ header {
         display: flex;
 
         position: absolute;
+
         top: 100%;
         left: 0;
 
@@ -519,7 +847,9 @@ header {
 
     .whatsapp {
         padding: 12px 16px;
+
         font-size: 14px;
+
         white-space: nowrap;
     }
 
@@ -538,6 +868,7 @@ header {
         height: 32px;
 
         background: transparent;
+
         border: none;
 
         color: var(--black);
@@ -555,21 +886,25 @@ header {
 
     .barsIcon {
         opacity: 1;
+
         transform: rotate(0deg);
     }
 
     .closeIcon {
         opacity: 0;
+
         transform: rotate(-90deg);
     }
 
     .menuToggle.open .barsIcon {
         opacity: 0;
+
         transform: rotate(90deg);
     }
 
     .menuToggle.open .closeIcon {
         opacity: 1;
+
         transform: rotate(0deg);
     }
 
@@ -588,23 +923,32 @@ header {
         content: "";
 
         position: absolute;
+
         inset: 0;
 
-        background: linear-gradient(90deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.72) 46%, rgba(0, 0, 0, 0.18) 100%);
+        background: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0.72) 46%,
+            rgba(0, 0, 0, 0.18) 100%
+        );
     }
 
     .heroContent {
         position: relative;
+
         z-index: 1;
     }
 
     .heroContent h1 {
         max-width: 500px;
+
         font-size: 38px;
     }
 
     .heroContent p {
         max-width: 470px;
+
         font-size: 17px;
     }
 
@@ -630,19 +974,35 @@ header {
         background-color: var(--green);
     }
 
-    .servicesGrid {
-        max-width: 620px;
+    .servicesCarousel {
+        max-width: 720px;
+
         margin-top: 12px;
 
-        display: block;
+        gap: 14px;
+    }
+
+    .servicesSlider {
+        width: 100%;
+        max-width: 620px;
+
+        margin: 0 auto;
+    }
+
+    .servicesTrack {
+        gap: 0;
     }
 
     .serviceCard {
+        min-width: 100%;
         min-height: 158px;
 
         display: grid;
+
         grid-template-columns: 115px 1fr;
+
         align-items: center;
+
         gap: 28px;
 
         padding: 20px 8px;
@@ -656,6 +1016,7 @@ header {
 
     .serviceIcon {
         height: auto;
+
         justify-content: center;
     }
 
@@ -665,23 +1026,33 @@ header {
 
     .serviceCard h3 {
         margin-top: 0;
+
         font-size: 19px;
     }
 
     .serviceCard p {
+        max-width: 390px;
+
         font-size: 15px;
     }
 
     .serviceCard a {
         margin-top: 10px;
+
         font-size: 15px;
     }
+
+    .serviceArrow {
+        font-size: 26px;
+    }
 }
+
 
 @media (max-width: 600px) {
 
     .info {
         gap: 7px;
+
         padding: 10px 12px;
     }
 
@@ -689,8 +1060,12 @@ header {
         font-size: 12px;
     }
 
+
+    /* NAVBAR */
+
     .navBar {
         height: 92px;
+
         padding: 0 14px;
     }
 
@@ -704,6 +1079,7 @@ header {
 
     .whatsapp {
         padding: 11px 12px;
+
         font-size: 12px;
     }
 
@@ -729,11 +1105,17 @@ header {
 
     .hero {
         height: 600px;
+
         background-position: 65% center;
     }
 
     .hero::before {
-        background: linear-gradient(90deg, rgba(0, 0, 0, 0.94) 0%, rgba(0, 0, 0, 0.72) 62%, rgba(0, 0, 0, 0.25) 100%);
+        background: linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.94) 0%,
+            rgba(0, 0, 0, 0.72) 62%,
+            rgba(0, 0, 0, 0.25) 100%
+        );
     }
 
     .heroContent {
@@ -742,6 +1124,7 @@ header {
 
     .heroContent h1 {
         max-width: 360px;
+
         font-size: 34px;
         line-height: 1.25;
     }
@@ -760,6 +1143,7 @@ header {
 
         flex-direction: column;
         align-items: stretch;
+
         gap: 14px;
 
         margin-top: 28px;
@@ -783,13 +1167,19 @@ header {
 
     .servicesTitle h2 {
         margin-top: 8px;
+
         font-size: 25px;
+    }
+
+    .servicesCarousel {
+        gap: 8px;
     }
 
     .serviceCard {
         min-height: 148px;
 
         grid-template-columns: 82px 1fr;
+
         gap: 20px;
 
         padding: 20px 0;
@@ -804,8 +1194,21 @@ header {
     }
 
     .serviceCard p {
+        max-width: 100%;
+
         font-size: 14px;
     }
+
+    .serviceArrow {
+        font-size: 22px;
+    }
+
+    .serviceDots {
+        margin-top: 18px;
+    }
+
+
+    /* WHATSAPP FLUTUANTE */
 
     .floatingWhatsapp {
         right: 18px;
@@ -819,6 +1222,7 @@ header {
         font-size: 29px;
     }
 }
+
 
 @media (max-width: 390px) {
 
