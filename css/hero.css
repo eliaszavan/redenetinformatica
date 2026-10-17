@@ -109,9 +109,7 @@
 
     .hero {
         position: relative;
-
         height: 600px;
-
         background-position: 65% center;
     }
 
@@ -131,6 +129,7 @@
     }
 
     .heroContent {
+
         position: relative;
 
         z-index: 1;
@@ -168,6 +167,13 @@
     }
 
     .heroContent {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+
         padding: 0 20px;
     }
 
@@ -208,6 +214,12 @@
 @media (max-width: 390px) {
 
     .heroContent h1 {
-        font-size: 31px;
+        font-size: 28px;
+        width: 330px;
+    }
+
+    .heroContent p {
+        font-size: 16px;
+        width: 300px;
     }
 }
