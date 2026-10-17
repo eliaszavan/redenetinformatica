@@ -297,7 +297,7 @@
     }
 
     .serviceCard p {
-        max-width: 390px;
+        max-width: 300px;
 
         font-size: 15px;
     }
@@ -353,7 +353,7 @@
     }
 
     .serviceCard p {
-        max-width: 100%;
+        max-width: 200px;
 
         font-size: 14px;
     }

@@ -1,3 +1,8 @@
+
+/* ========================================
+   HEADER
+======================================== */
+
 header {
     background-color: var(--white);
     width: 100%;
@@ -13,7 +18,28 @@ header {
 }
 
 
-/* INFO */
+/* ========================================
+   LOGOS
+======================================== */
+
+header #desktopLogo {
+    display: block;
+}
+
+header #mobileLogo {
+    display: none;
+    width: clamp(116.2px, 33.2vw, 232.4px);
+    max-width: 100%;
+    height: auto;
+    flex: 0 1 auto;
+    min-width: 0;
+    object-fit: contain;
+}
+
+
+/* ========================================
+   INFO
+======================================== */
 
 .info {
     max-width: 100%;
@@ -44,14 +70,15 @@ header {
 
 .info i {
     font-size: 16px;
-
     color: var(--green);
 
     transition: all 0.3s ease-in-out;
 }
 
 
-/* NAVBAR */
+/* ========================================
+   NAVBAR
+======================================== */
 
 .navBar {
     height: 100px;
@@ -69,14 +96,12 @@ header {
 .navRight {
     display: flex;
     align-items: center;
-
     gap: 96px;
 }
 
 .menu {
     display: flex;
     align-items: center;
-
     gap: 56px;
 }
 
@@ -84,7 +109,6 @@ header {
     position: relative;
 
     text-decoration: none;
-
     color: var(--black);
 
     font-size: 16px;
@@ -116,7 +140,9 @@ header {
 }
 
 
-/* WHATSAPP NAVBAR */
+/* ========================================
+   WHATSAPP NAVBAR
+======================================== */
 
 .whatsapp {
     text-decoration: none;
@@ -125,7 +151,6 @@ header {
     color: var(--white);
 
     padding: 14px 28px;
-
     border-radius: 4px;
 
     font-size: 14px;
@@ -133,7 +158,6 @@ header {
 
     display: flex;
     align-items: center;
-
     gap: 8px;
 
     transition: all 0.3s ease-in-out;
@@ -148,84 +172,78 @@ header {
 }
 
 
-/* MENU TOGGLE */
+/* ========================================
+   MENU TOGGLE
+======================================== */
 
 .menuToggle {
     display: none;
 }
 
-#desktopLogo {
-    display: block;
-}
 
-#mobileLogo {
-    display: none;
-}
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
 
 
-/* RESPONSIVIDADE */
+/* ----------------------------------------
+   TELAS ATE 1201PX
+---------------------------------------- */
 
-@media (max-width: 1200px) {
+@media (max-width: 1201px) {
+
+    .navBar {
+        position: relative;
+        padding: 0 20px;
+        gap: 16px;
+    }
 
     .navRight {
         gap: 45px;
+        flex-shrink: 0;
     }
 
     .menu {
         gap: 28px;
     }
+
+    .whatsapp {
+        display: none;
+    }
 }
 
 
+/* ----------------------------------------
+   TABLETS - ATE 968PX
+---------------------------------------- */
+
 @media (max-width: 968px) {
+
+    /* INFO */
 
     .info {
         height: auto;
-
         flex-direction: column;
-
         gap: 8px;
-
         padding: 14px 20px;
     }
 
-    .info a {
-        font-size: 14px;
-    }
-
+    .info a,
     .info i {
         font-size: 14px;
     }
 
-
     /* NAVBAR */
 
     .navBar {
-        position: relative;
-
-        height: 100px;
-
-        padding: 0 20px;
-    }
-
-    #desktopLogo {
-        display: none;
-    }
-
-    #mobileLogo {
-        display: block;
-
-        width: auto;
-        height: 100px;
-
-        object-fit: contain;
-
-        flex-shrink: 0;
+        gap: 12px;
     }
 
     .navRight {
         gap: 16px;
     }
+
+    /* MENU */
 
     .menu {
         display: none;
@@ -235,21 +253,19 @@ header {
         display: flex;
 
         position: absolute;
-
         top: 100%;
         left: 0;
 
         width: 100%;
+        box-sizing: border-box;
 
         flex-direction: column;
         align-items: center;
-
         gap: 0;
 
         padding: 16px 20px;
 
         background-color: var(--white);
-
         box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
 
         z-index: 1000;
@@ -257,9 +273,9 @@ header {
 
     .menu.open a {
         width: 100%;
+        box-sizing: border-box;
 
         padding: 14px 0;
-
         text-align: center;
 
         border-bottom: 1px solid #eeeeee;
@@ -273,22 +289,6 @@ header {
         display: none;
     }
 
-
-    /* WHATSAPP */
-
-    .whatsapp {
-        padding: 12px 16px;
-
-        font-size: 14px;
-
-        white-space: nowrap;
-    }
-
-    .whatsapp i {
-        font-size: 18px;
-    }
-
-
     /* MENU TOGGLE */
 
     .menuToggle {
@@ -297,16 +297,15 @@ header {
         justify-content: center;
 
         position: relative;
+        flex-shrink: 0;
 
         width: 32px;
         height: 32px;
 
         background: transparent;
-
         border: none;
 
         color: var(--black);
-
         cursor: pointer;
     }
 
@@ -315,40 +314,59 @@ header {
 
         font-size: 26px;
 
-        transition: opacity 0.25s ease, transform 0.25s ease;
+        transition:
+            opacity 0.25s ease,
+            transform 0.25s ease;
     }
 
     .barsIcon {
         opacity: 1;
-
         transform: rotate(0deg);
     }
 
     .closeIcon {
         opacity: 0;
-
         transform: rotate(-90deg);
     }
 
     .menuToggle.open .barsIcon {
         opacity: 0;
-
         transform: rotate(90deg);
     }
 
     .menuToggle.open .closeIcon {
         opacity: 1;
-
         transform: rotate(0deg);
     }
 }
 
 
+/* ----------------------------------------
+   TROCA DE LOGOS - ATE 699PX
+---------------------------------------- */
+
+@media (max-width: 699px) {
+
+    header #desktopLogo {
+        display: none;
+    }
+
+    header #mobileLogo {
+        display: block;
+    }
+}
+
+
+/* ----------------------------------------
+   SMARTPHONES - ATE 600PX
+---------------------------------------- */
+
 @media (max-width: 600px) {
+
+    /* INFO */
 
     .info {
         gap: 7px;
-
         padding: 10px 12px;
     }
 
@@ -356,32 +374,27 @@ header {
         font-size: 12px;
     }
 
-
     /* NAVBAR */
 
     .navBar {
         height: 92px;
-
         padding: 0 14px;
+        gap: 8px;
     }
 
-    #mobileLogo {
-        height: 82px;
+    /* LOGO MOBILE - REDUCAO DE 17% */
+
+    header #mobileLogo {
+        width: clamp(99.6px, 39.84vw, 199.2px);
     }
+
+    /* NAVBAR RIGHT */
 
     .navRight {
         gap: 10px;
     }
 
-    .whatsapp {
-        padding: 11px 12px;
-
-        font-size: 12px;
-    }
-
-    .whatsapp i {
-        font-size: 17px;
-    }
+    /* MENU TOGGLE */
 
     .menuToggle {
         width: 28px;
@@ -392,23 +405,9 @@ header {
         font-size: 24px;
     }
 
+    /* MENU ABERTO */
+
     .menu.open {
         padding: 12px 16px;
-    }
-}
-
-
-@media (max-width: 390px) {
-
-    #mobileLogo {
-        height: 74px;
-    }
-
-    .whatsapp {
-        padding: 10px;
-    }
-
-    .whatsapp i {
-        font-size: 16px;
     }
 }
