@@ -2,12 +2,14 @@
 /* ========================================
    HEADER
 ======================================== */
-
 header {
     background-color: var(--white);
     width: 100%;
-}
 
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 .logoLink {
     display: flex;
     align-items: center;
@@ -80,7 +82,9 @@ header #mobileLogo {
    NAVBAR
 ======================================== */
 
+
 .navBar {
+    
     height: 100px;
 
     display: flex;

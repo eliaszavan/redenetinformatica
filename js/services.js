@@ -1,142 +1,181 @@
-const servicesTrack = document.querySelector('.servicesTrack');
 
+const servicesTrack = document.querySelector('.servicesTrack');
+const servicesSlider = document.querySelector('.servicesSlider');
 const serviceCards = document.querySelectorAll('.serviceCard');
 
 const servicePrev = document.querySelector('.servicePrev');
 const serviceNext = document.querySelector('.serviceNext');
-
 const serviceDots = document.querySelector('.serviceDots');
 
-
 let serviceIndex = 0;
+let servicePositions = [];
 
 
-function getVisibleServices() {
-
-    if (window.innerWidth <= 968) {
-        return 1;
+// Calcula as posições válidas do carrossel.
+function getServicePositions() {
+    if (!servicesTrack || !servicesSlider || !serviceCards.length) {
+        return [0];
     }
 
-    if (window.innerWidth <= 1200) {
-        return 3;
-    }
+    const maxScroll = Math.max(
+        0,
+        servicesTrack.scrollWidth - servicesSlider.clientWidth
+    );
 
-    return 4;
+    const positions = [0];
+
+    let position = 0;
+
+    serviceCards.forEach((card, index) => {
+        if (index === 0) return;
+
+        const cardPosition = card.offsetLeft -
+            serviceCards[0].offsetLeft;
+
+        // Só adiciona posições que ainda permitem avançar
+        // sem ultrapassar o limite real do carrossel.
+        if (
+            cardPosition > position &&
+            cardPosition < maxScroll - 1
+        ) {
+            positions.push(cardPosition);
+            position = cardPosition;
+        }
+    });
+
+    // Só cria uma posição final se houver espaço suficiente
+    // para justificar uma nova bolinha.
+    const lastPosition = positions[positions.length - 1];
+    const remainingScroll = maxScroll - lastPosition;
+    const minExtraScroll = 32;
+
+    if (remainingScroll > minExtraScroll) {
+        positions.push(maxScroll);
+    }
+    return positions;
 }
 
 
+// Cria as bolinhas de navegação.
 function createServiceDots() {
+    if (!serviceDots) return;
 
     serviceDots.innerHTML = '';
 
-    const visibleServices = getVisibleServices();
-
-    const totalDots = serviceCards.length - visibleServices + 1;
-
-
-    for (let i = 0; i < totalDots; i++) {
-
+    servicePositions.forEach((_, index) => {
         const dot = document.createElement('button');
 
+        dot.type = 'button';
         dot.classList.add('serviceDot');
 
-
-        if (i === serviceIndex) {
-            dot.classList.add('active');
-        }
-
+        dot.setAttribute(
+            'aria-label',
+            `Ir para a posição ${index + 1}`
+        );
 
         dot.addEventListener('click', () => {
-
-            serviceIndex = i;
-
+            serviceIndex = index;
             updateServices();
         });
 
-
         serviceDots.appendChild(dot);
-    }
-}
-
-
-function updateServices() {
-
-    const card = serviceCards[0];
-
-    const trackStyle = window.getComputedStyle(servicesTrack);
-
-    const gap = parseFloat(trackStyle.gap);
-
-    const cardWidth = card.offsetWidth;
-
-    const position = serviceIndex * (cardWidth + gap);
-
-
-    servicesTrack.style.transform = `translateX(-${position}px)`;
-
-
-    const dots = document.querySelectorAll('.serviceDot');
-
-
-    dots.forEach((dot, index) => {
-
-        dot.classList.toggle('active', index === serviceIndex);
     });
 }
 
 
-serviceNext.addEventListener('click', () => {
+// Atualiza o carrossel, as bolinhas e as setas.
+function updateServices() {
+    if (!servicesTrack || !serviceCards.length) return;
 
-    const visibleServices = getVisibleServices();
+    const maxIndex = servicePositions.length - 1;
 
-    const maxIndex = serviceCards.length - visibleServices;
+    serviceIndex = Math.max(
+        0,
+        Math.min(serviceIndex, maxIndex)
+    );
 
+    const position = servicePositions[serviceIndex] || 0;
 
-    if (serviceIndex < maxIndex) {
+    servicesTrack.style.transform =
+        `translateX(-${position}px)`;
 
-        serviceIndex++;
+    const dots = serviceDots.querySelectorAll('.serviceDot');
 
-    } else {
+    dots.forEach((dot, index) => {
+        const active = index === serviceIndex;
 
-        serviceIndex = 0;
+        dot.classList.toggle('active', active);
+
+        dot.setAttribute(
+            'aria-current',
+            active ? 'true' : 'false'
+        );
+    });
+
+    if (servicePrev) {
+        servicePrev.disabled = serviceIndex === 0;
     }
 
-
-    updateServices();
-});
-
-
-servicePrev.addEventListener('click', () => {
-
-    const visibleServices = getVisibleServices();
-
-    const maxIndex = serviceCards.length - visibleServices;
-
-
-    if (serviceIndex > 0) {
-
-        serviceIndex--;
-
-    } else {
-
-        serviceIndex = maxIndex;
+    if (serviceNext) {
+        serviceNext.disabled = serviceIndex >= maxIndex;
     }
+}
 
 
-    updateServices();
-});
+// Avança para a próxima posição.
+if (serviceNext) {
+    serviceNext.addEventListener('click', () => {
+        if (serviceIndex < servicePositions.length - 1) {
+            serviceIndex++;
+            updateServices();
+        }
+    });
+}
 
 
-window.addEventListener('resize', () => {
+// Volta para a posição anterior.
+if (servicePrev) {
+    servicePrev.addEventListener('click', () => {
+        if (serviceIndex > 0) {
+            serviceIndex--;
+            updateServices();
+        }
+    });
+}
 
-    serviceIndex = 0;
+
+// Recalcula as posições após alterações no layout.
+function refreshServices() {
+    const currentPosition = servicePositions[serviceIndex] || 0;
+
+    servicePositions = getServicePositions();
+
+    // Mantém a posição visual mais próxima após o redimensionamento.
+    let closestIndex = 0;
+    let closestDistance = Infinity;
+
+    servicePositions.forEach((position, index) => {
+        const distance = Math.abs(position - currentPosition);
+
+        if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIndex = index;
+        }
+    });
+
+    serviceIndex = closestIndex;
 
     createServiceDots();
-
     updateServices();
-});
+}
 
 
-createServiceDots();
+// Aguarda o layout inicial estar calculado.
+window.addEventListener('load', refreshServices);
 
-updateServices();
+// Recalcula ao redimensionar a janela.
+window.addEventListener('resize', refreshServices);
+
+
+// Inicializa.
+refreshServices();

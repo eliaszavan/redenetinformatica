@@ -2,8 +2,10 @@
 
 .services {
     width: 100%;
+    height: 40vh;
 
     padding: 38px 24px 34px;
+    margin-top: 84px;
 
     background-color: var(--white);
 }
@@ -67,6 +69,7 @@
 /* CARD */
 
 .serviceCard {
+    box-sizing: border-box;
     min-width: calc((100% - 48px) / 3);
 
     flex-shrink: 0;
@@ -79,7 +82,7 @@
 }
 
 .serviceIcon img {
-    height: 54px;
+    height: 100px;
 
     display: flex;
     align-items: center;
@@ -159,6 +162,12 @@
     transform: scale(1.1);
 }
 
+
+.serviceArrow:disabled {
+    opacity: 0.3;
+    cursor: default;
+    transform: none;
+}
 
 /* DOTS */
 
@@ -287,7 +296,7 @@
     }
 
     .serviceIcon i {
-        font-size: 58px;
+        font-size: 56px;
     }
 
     .serviceCard h3 {
@@ -335,17 +344,17 @@
     }
 
     .serviceCard {
-        min-height: 148px;
+        min-height: 144px;
 
-        grid-template-columns: 82px 1fr;
+        grid-template-columns: 156px 1fr;
 
-        gap: 20px;
+        gap: 24px;
 
         padding: 20px 0;
     }
 
     .serviceIcon i {
-        font-size: 49px;
+        font-size: 48px;
     }
 
     .serviceCard h3 {
