@@ -129,9 +129,7 @@
     }
 
     .heroContent {
-
         position: relative;
-
         z-index: 1;
     }
 
@@ -153,6 +151,7 @@
 
     .hero {
         height: 600px;
+        background-image: url('../assets/mobile_hero_banner.png');
 
         background-position: 65% center;
     }
