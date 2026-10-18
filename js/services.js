@@ -43,15 +43,11 @@ function getServicePositions() {
         }
     });
 
-    // Só cria uma posição final se houver espaço suficiente
-    // para justificar uma nova bolinha.
-    const lastPosition = positions[positions.length - 1];
-    const remainingScroll = maxScroll - lastPosition;
-    const minExtraScroll = 32;
-
-    if (remainingScroll > minExtraScroll) {
+    // Inclui o limite final quando ainda não foi alcançado.
+    if (maxScroll > 0 && positions[positions.length - 1] < maxScroll - 1) {
         positions.push(maxScroll);
     }
+
     return positions;
 }
 

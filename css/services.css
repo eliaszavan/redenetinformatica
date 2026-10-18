@@ -1,3 +1,4 @@
+
 /* SERVIÇOS */
 
 .services {
@@ -84,8 +85,7 @@
 .serviceIcon img {
     height: 100px;
 
-    display: flex;
-    align-items: center;
+    display: block;
 
     color: var(--green);
 }
@@ -162,12 +162,12 @@
     transform: scale(1.1);
 }
 
-
 .serviceArrow:disabled {
     opacity: 0.3;
     cursor: default;
     transform: none;
 }
+
 
 /* DOTS */
 
@@ -228,6 +228,8 @@
 }
 
 
+/* TABLET */
+
 @media (max-width: 968px) {
 
     .services {
@@ -274,7 +276,7 @@
 
         display: grid;
 
-        grid-template-columns: 115px 1fr;
+        grid-template-columns: 115px minmax(0, 1fr);
 
         align-items: center;
 
@@ -289,14 +291,36 @@
         border-bottom: none;
     }
 
-    .serviceIcon {
-        height: auto;
+    /* ÁREA PADRONIZADA DO ÍCONE */
 
-        justify-content: center;
+    .serviceIcon {
+        width: 115px;
+        height: 100px;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        flex-shrink: 0;
+    }
+
+    .serviceIcon img {
+        display: block;
+
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+
+        object-fit: contain;
+        object-position: right center;
     }
 
     .serviceIcon i {
         font-size: 56px;
+    }
+
+    .serviceText {
+        min-width: 0;
     }
 
     .serviceCard h3 {
@@ -323,6 +347,8 @@
 }
 
 
+/* CELULAR */
+
 @media (max-width: 600px) {
 
     .services {
@@ -346,15 +372,37 @@
     .serviceCard {
         min-height: 144px;
 
-        grid-template-columns: 156px 1fr;
+        grid-template-columns: 56px minmax(0, 1fr);
 
-        gap: 24px;
+        gap: 16px;
 
         padding: 20px 0;
     }
 
+    /* ÍCONES COM TAMANHO E ALINHAMENTO FIXOS */
+
+    .serviceIcon {
+        width: 56px;
+        height: 56px;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .serviceIcon img {
+        display: block;
+
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+
+        object-fit: contain;
+        object-position: right center;
+    }
+
     .serviceIcon i {
-        font-size: 48px;
+        font-size: 42px;
     }
 
     .serviceCard h3 {
