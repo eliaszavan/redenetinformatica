@@ -1,0 +1,502 @@
+/* MODAL DE SERVIÇOS */
+
+.serviceModal {
+    position: fixed;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px;
+
+    visibility: hidden;
+    opacity: 0;
+
+    z-index: 2000;
+
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.serviceModal.open {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* OVERLAY */
+
+.serviceModalOverlay {
+    position: absolute;
+
+    inset: 0;
+
+    background-color: rgba(0, 0, 0, 0.72);
+
+    backdrop-filter: blur(2px);
+}
+
+
+/* MODAL */
+
+.serviceModalBox {
+    position: relative;
+
+    width: 100%;
+    max-width: 700px;
+
+    padding: 28px;
+
+    background-color: var(--white);
+
+    border-radius: 14px;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
+    transform: translateY(15px) scale(0.98);
+
+    transition: transform 0.25s ease;
+
+    z-index: 1;
+}
+
+.serviceModal.open .serviceModalBox {
+    transform: translateY(0) scale(1);
+}
+
+
+/* BOTÃO FECHAR */
+
+.serviceModalClose {
+    position: absolute;
+
+    top: 16px;
+    right: 16px;
+
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+
+    border: none;
+
+    color: var(--grey);
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.serviceModalClose:hover {
+    color: var(--green);
+
+    transform: rotate(90deg);
+}
+
+
+/* CABEÇALHO */
+
+.serviceModalHeader {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    padding-right: 40px;
+}
+
+.serviceModalIcon {
+    width: 78px;
+    height: 78px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background-color: #f0f7ee;
+
+    color: var(--green);
+}
+
+.serviceModalIcon i {
+    font-size: 38px;
+}
+
+.serviceModalTitle span {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: var(--green);
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.serviceModalTitle h2 {
+    color: var(--black);
+
+    font-size: 28px;
+}
+
+.serviceModalTitle p {
+    max-width: 500px;
+
+    margin-top: 5px;
+
+    color: #4d4d4d;
+
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.serviceModalLine {
+    width: 100%;
+    height: 1px;
+
+    margin: 18px 0;
+
+    background-color: #e5e5e5;
+}
+
+
+/* CONTEÚDO */
+
+.serviceModalContent h3 {
+    margin-bottom: 12px;
+
+    color: var(--black);
+
+    font-size: 20px;
+}
+
+.serviceModalItems {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 8px;
+}
+
+.serviceModalItem {
+    min-height: 52px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 9px 12px;
+
+    background-color: #f1f7ef;
+
+    border-radius: 7px;
+
+    color: var(--black);
+
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+.serviceModalItem i {
+    width: 24px;
+    height: 24px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background-color: var(--green);
+    color: var(--white);
+
+    font-size: 11px;
+}
+
+
+/* INFORMAÇÃO */
+
+.serviceModalInfo {
+    margin-top: 14px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px 14px;
+
+    background-color: #f5f5f5;
+
+    border-radius: 7px;
+}
+
+.serviceModalInfo > i {
+    flex-shrink: 0;
+
+    color: var(--green);
+
+    font-size: 25px;
+}
+
+.serviceModalInfo p {
+    color: #444444;
+
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+
+/* FOOTER */
+
+.serviceModalFooter {
+    margin-top: 16px;
+    padding-top: 14px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    border-top: 1px solid #e5e5e5;
+}
+
+.serviceModalWhatsapp,
+.serviceModalBack {
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.serviceModalWhatsapp {
+    text-decoration: none;
+
+    background-color: var(--green);
+    color: var(--white);
+}
+
+.serviceModalWhatsapp i {
+    font-size: 20px;
+}
+
+.serviceModalWhatsapp:hover {
+    background-color: var(--darkGreen);
+}
+
+.serviceModalBack {
+    background-color: transparent;
+    color: var(--darkGreen);
+
+    border: 1px solid var(--green);
+}
+
+.serviceModalBack:hover {
+    background-color: #f0f7ee;
+}
+
+
+/* MODAL ABERTO */
+
+body.modalOpen {
+    overflow: hidden;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 700px) {
+
+    .serviceModal {
+        padding: 8px;
+    }
+
+    .serviceModalBox {
+        max-width: 520px;
+
+        padding: 20px 16px;
+    }
+
+    .serviceModalClose {
+        top: 10px;
+        right: 10px;
+    }
+
+    .serviceModalHeader {
+        gap: 12px;
+
+        padding-right: 30px;
+    }
+
+    .serviceModalIcon {
+        width: 58px;
+        height: 58px;
+    }
+
+    .serviceModalIcon i {
+        font-size: 28px;
+    }
+
+    .serviceModalTitle span {
+        font-size: 9px;
+    }
+
+    .serviceModalTitle h2 {
+        font-size: 23px;
+    }
+
+    .serviceModalTitle p {
+        margin-top: 3px;
+
+        font-size: 12px;
+        line-height: 1.3;
+    }
+
+    .serviceModalLine {
+        margin: 12px 0;
+    }
+
+    .serviceModalContent h3 {
+        margin-bottom: 9px;
+
+        font-size: 18px;
+    }
+
+    .serviceModalItems {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 6px;
+    }
+
+    .serviceModalItem {
+        min-height: 46px;
+
+        gap: 7px;
+
+        padding: 7px 8px;
+
+        font-size: 11px;
+    }
+
+    .serviceModalItem i {
+        width: 20px;
+        height: 20px;
+
+        font-size: 9px;
+    }
+
+    .serviceModalInfo {
+        margin-top: 10px;
+
+        gap: 9px;
+
+        padding: 9px 10px;
+    }
+
+    .serviceModalInfo > i {
+        font-size: 21px;
+    }
+
+    .serviceModalInfo p {
+        font-size: 10px;
+        line-height: 1.3;
+    }
+
+    .serviceModalFooter {
+        margin-top: 10px;
+        padding-top: 10px;
+
+        gap: 8px;
+    }
+
+    .serviceModalWhatsapp,
+    .serviceModalBack {
+        height: 42px;
+
+        font-size: 12px;
+    }
+
+    .serviceModalWhatsapp i {
+        font-size: 17px;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .serviceModalBox {
+        padding: 17px 13px;
+    }
+
+    .serviceModalIcon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .serviceModalIcon i {
+        font-size: 24px;
+    }
+
+    .serviceModalTitle h2 {
+        font-size: 21px;
+    }
+
+    .serviceModalTitle p {
+        font-size: 11px;
+    }
+
+    .serviceModalContent h3 {
+        font-size: 16px;
+    }
+
+    .serviceModalItem {
+        min-height: 43px;
+
+        padding: 6px;
+
+        font-size: 10px;
+    }
+
+    .serviceModalInfo {
+        padding: 8px;
+    }
+
+    .serviceModalFooter {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .serviceModalWhatsapp,
+    .serviceModalBack {
+        height: 40px;
+
+        font-size: 11px;
+    }
+}

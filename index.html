@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/hero.css">
     <link rel="stylesheet" href="css/reviews.css">
-    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/services/services.css">
+    <link rel="stylesheet" href="css/services/services_modal.css">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
@@ -116,7 +117,7 @@
                                 completo para o seu PC.
                             </p>
 
-                            <a href="#">
+                            <a href="#" class="serviceMore" data-service="computadores">
                                 Saiba mais
                                 <i class="fa-solid fa-arrow-right"></i>
                             </a>
@@ -137,7 +138,7 @@
                                 SSD, memória e muito mais.
                             </p>
 
-                            <a href="#">
+                            <a href="#" class="serviceMore" data-service="notebooks">
                                 Saiba mais
                                 <i class="fa-solid fa-arrow-right"></i>
                             </a>
@@ -158,7 +159,7 @@
                                 jato de tinta e laser.
                             </p>
 
-                            <a href="#">
+                            <a href="#" class="serviceMore" data-service="impressoras">
                                 Saiba mais
                                 <i class="fa-solid fa-arrow-right"></i>
                             </a>
@@ -179,7 +180,7 @@
                                 para seu setup gamer.
                             </p>
 
-                            <a href="#">
+                            <a href="#" class="serviceMore" data-service="pcgamer">
                                 Saiba mais
                                 <i class="fa-solid fa-arrow-right"></i>
                             </a>
@@ -201,7 +202,7 @@
                                 do tamanho que desejar.
                             </p>
 
-                            <a href="#">
+                            <a href="#" class="serviceMore" data-service="redes">
                                 Saiba mais
                                 <i class="fa-solid fa-arrow-right"></i>
                             </a>
@@ -221,7 +222,7 @@
                                 na sua própria residência ou empresa.
                             </p>
 
-                            <a href="#">
+                            <a href="#" class="serviceMore" data-service="cameras">
                                 Saiba mais
                                 <i class="fa-solid fa-arrow-right"></i>
                             </a>
@@ -241,6 +242,70 @@
         <div class="serviceDots"></div>
 
     </section>
+
+    <div class="serviceModal" id="serviceModal">
+
+        <div class="serviceModalOverlay"></div>
+
+        <div class="serviceModalBox">
+
+            <button class="serviceModalClose" aria-label="Fechar modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="serviceModalHeader">
+
+                <div class="serviceModalIcon">
+                    <i id="modalIcon" class="fa-solid fa-laptop"></i>
+                </div>
+
+                <div class="serviceModalTitle">
+                    <span>SERVIÇOS REDENET</span>
+
+                    <h2 id="modalTitle">Notebooks</h2>
+
+                    <p id="modalDescription">
+                        Manutenção especializada para notebooks.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="serviceModalLine"></div>
+
+            <div class="serviceModalContent">
+
+                <h3>Como podemos ajudar?</h3>
+
+                <div class="serviceModalItems" id="modalItems"></div>
+
+                <div class="serviceModalInfo">
+                    <i class="fa-solid fa-circle-info"></i>
+
+                    <p id="modalInfo">
+                        Traga seu equipamento até a RedeNet para uma avaliação.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="serviceModalFooter">
+
+                <a href="https://wa.me/554434230666" target="_blank" rel="noopener noreferrer"
+                    class="serviceModalWhatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Solicitar orçamento
+                </a>
+
+                <button class="serviceModalBack">
+                    Continuar navegando
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
 
     <section class="reviews" id="avaliacoes">
         <div class="reviewsContainer">
@@ -386,7 +451,6 @@
             <button class="reviewArrow reviewNext">
                 <i class="fa-solid fa-chevron-right"></i>
             </button>
-
         </div>
 
         <div class="reviewDots"></div>
@@ -399,7 +463,8 @@
 
     <script src="js/main.js"></script>
     <script src="js/reviews.js"></script>
-    <script src="js/services.js"></script>
+    <script src="js/services/services.js"></script>
+    <script src="js/services/services_modal.js"></script>
 </body>
 
 </html>
