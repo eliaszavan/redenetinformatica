@@ -275,6 +275,13 @@ if (servicePrev) {
 
 servicesSlider.addEventListener('pointerdown', (event) => {
 
+    /* NÃO INICIA ARRASTE AO CLICAR EM LINKS OU BOTÕES */
+
+    if (event.target.closest('a, button')) {
+        return;
+    }
+
+
     if (
         event.pointerType === 'mouse' &&
         event.button !== 0
@@ -434,6 +441,11 @@ servicesSlider.addEventListener(
 /* EVITA ABRIR O MODAL AO ARRASTAR */
 
 servicesSlider.addEventListener('click', (event) => {
+
+    if (event.target.closest('.serviceMore')) {
+        return;
+    }
+
 
     if (serviceDidDrag) {
 
