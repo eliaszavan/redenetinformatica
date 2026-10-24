@@ -1,0 +1,226 @@
+/* REDES SOCIAIS */
+
+.socialMedia {
+    width: 100%;
+
+    margin: 0;
+    padding: 24px;
+
+    background-color: #111111;
+
+    border-bottom: 1px solid #292929;
+}
+
+.socialMediaContainer {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* TEXTO */
+
+.socialMediaText span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #777777;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+}
+
+.socialMediaText h2 {
+    color: var(--white);
+
+    font-size: 19px;
+    font-weight: 600;
+}
+
+
+/* LINKS */
+
+.socialMediaLinks {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.socialMediaLinks a {
+    min-width: 115px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 0 14px;
+
+    text-decoration: none;
+
+    color: #dddddd;
+
+    background-color: #202020;
+
+    border: 1px solid #303030;
+    border-radius: 6px;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    transition: all 0.25s ease-in-out;
+}
+
+.socialMediaLinks i {
+    font-size: 16px;
+}
+
+
+/* INSTAGRAM */
+
+.socialInstagram:hover {
+    color: #ffffff;
+
+    background-color: #e1306c;
+
+    border-color: #e1306c;
+
+    transform: translateY(-2px);
+}
+
+
+/* YOUTUBE */
+
+.socialYoutube:hover {
+    color: #ffffff;
+
+    background-color: #ff0000;
+
+    border-color: #ff0000;
+
+    transform: translateY(-2px);
+}
+
+
+/* FACEBOOK */
+
+.socialFacebook:hover {
+    color: #ffffff;
+
+    background-color: #1877f2;
+
+    border-color: #1877f2;
+
+    transform: translateY(-2px);
+}
+
+
+/* TABLET */
+
+@media (max-width: 850px) {
+
+    .socialMedia {
+        padding: 22px 24px;
+    }
+
+    .socialMediaContainer {
+        gap: 20px;
+    }
+
+    .socialMediaText h2 {
+        font-size: 18px;
+    }
+
+    .socialMediaLinks a {
+        min-width: 105px;
+
+        padding: 0 12px;
+
+        font-size: 10px;
+    }
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .socialMedia {
+        padding: 20px 18px;
+    }
+
+    .socialMediaContainer {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 14px;
+    }
+
+    .socialMediaText span {
+        font-size: 8px;
+    }
+
+    .socialMediaText h2 {
+        font-size: 17px;
+    }
+
+    .socialMediaLinks {
+        width: 100%;
+
+        gap: 7px;
+    }
+
+    .socialMediaLinks a {
+        flex: 1;
+
+        min-width: 0;
+        height: 39px;
+
+        padding: 0 8px;
+
+        font-size: 10px;
+    }
+
+    .socialMediaLinks i {
+        font-size: 16px;
+    }
+}
+
+
+/* CELULARES PEQUENOS */
+
+@media (max-width: 390px) {
+
+    .socialMedia {
+        padding: 18px 14px;
+    }
+
+    .socialMediaText h2 {
+        font-size: 16px;
+    }
+
+    .socialMediaLinks span {
+        display: none;
+    }
+
+    .socialMediaLinks a {
+        height: 38px;
+    }
+
+    .socialMediaLinks i {
+        font-size: 18px;
+    }
+}

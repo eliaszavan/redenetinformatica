@@ -1,0 +1,718 @@
+/* VISITA TÉCNICA */
+
+.technicalVisit {
+    width: 100%;
+    padding: 42px 24px;
+    background-color: #111111;
+}
+
+.technicalVisitContainer {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+
+/* CABEÇALHO */
+
+.technicalVisitHeader {
+    max-width: 760px;
+
+    margin-bottom: 24px;
+}
+
+.technicalVisitLabel {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--lightGreen);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+.technicalVisitHeader h2 {
+    color: var(--white);
+
+    font-size: 30px;
+    line-height: 1.15;
+
+    letter-spacing: -0.4px;
+}
+
+.technicalVisitHeader p {
+    max-width: 700px;
+
+    margin-top: 9px;
+
+    color: #b8b8b8;
+
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* CONTEÚDO PRINCIPAL */
+
+.technicalVisitContent {
+    width: 100%;
+
+    display: flex;
+    align-items: stretch;
+
+    gap: 16px;
+}
+
+
+/* CARD BRANCO */
+
+.technicalVisitMain {
+    position: relative;
+
+    flex: 1.05;
+
+    min-width: 0;
+
+    padding: 24px 26px;
+
+    overflow: hidden;
+
+    background-color: var(--white);
+
+    border-radius: 12px;
+}
+
+.technicalVisitMain::before {
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    top: -80px;
+    right: -70px;
+
+    border-radius: 50%;
+
+    background-color: rgba(78, 156, 57, 0.07);
+}
+
+
+/* ÍCONE */
+
+.technicalVisitIcon {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    color: var(--white);
+    background-color: var(--green);
+
+    border-radius: 9px;
+
+    font-size: 20px;
+}
+
+
+/* TÍTULO */
+
+.technicalVisitSmall {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #888888;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.technicalVisitMain > h3 {
+    max-width: 470px;
+
+    color: var(--black);
+
+    font-size: 22px;
+    line-height: 1.2;
+}
+
+.technicalVisitMain > p {
+    max-width: 610px;
+
+    margin-top: 9px;
+
+    color: #5d5d5d;
+
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+
+/* DESTAQUE */
+
+.technicalVisitHighlight {
+    max-width: 600px;
+
+    margin-top: 16px;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 11px;
+
+    padding: 13px 14px;
+
+    background-color: #f3f6f2;
+
+    border-radius: 7px;
+}
+
+.technicalVisitHighlight > i {
+    flex-shrink: 0;
+
+    margin-top: 1px;
+
+    color: var(--green);
+
+    font-size: 19px;
+}
+
+.technicalVisitHighlight div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.technicalVisitHighlight strong {
+    color: var(--black);
+
+    font-size: 13px;
+}
+
+.technicalVisitHighlight span {
+    color: #606060;
+
+    font-size: 11px;
+    line-height: 1.45;
+}
+
+
+/* CARD DAS ETAPAS */
+
+.technicalVisitFlow {
+    flex: 0.95;
+
+    min-width: 320px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 20px;
+
+    background-color: #1a1a1a;
+
+    border: 1px solid #2b2b2b;
+
+    border-radius: 12px;
+}
+
+
+/* ETAPA */
+
+.technicalVisitStep {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.technicalVisitNumber {
+    width: 22px;
+
+    flex-shrink: 0;
+
+    color: #666666;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.technicalVisitStepIcon {
+    width: 40px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--white);
+
+    background-color: #262626;
+
+    border: 1px solid #373737;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+}
+
+.technicalVisitStep > div:last-child {
+    flex: 1;
+
+    min-width: 0;
+}
+
+.technicalVisitStep h3 {
+    margin-bottom: 3px;
+
+    color: var(--white);
+
+    font-size: 15px;
+    line-height: 1.25;
+}
+
+.technicalVisitStep p {
+    color: #b0b0b0;
+
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+
+/* LINHA ENTRE ETAPAS */
+
+.technicalVisitLine {
+    width: 1px;
+    height: 18px;
+
+    margin: 4px 0 4px 42px;
+
+    background-color: #383838;
+}
+
+
+/* RODAPÉ */
+
+.technicalVisitFooter {
+    margin-top: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 16px 20px;
+
+    background-color: #202020;
+
+    border: 1px solid #303030;
+
+    border-radius: 10px;
+}
+
+.technicalVisitFooter > div {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.technicalVisitFooter span {
+    color: #777777;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.technicalVisitFooter strong {
+    color: var(--white);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* BOTÃO */
+
+.technicalVisitButton {
+    min-width: 190px;
+    height: 44px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 0 18px;
+
+    text-decoration: none;
+
+    color: var(--white);
+    background-color: var(--green);
+
+    border-radius: 6px;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition: all 0.25s ease-in-out;
+}
+
+.technicalVisitButton i {
+    font-size: 18px;
+}
+
+.technicalVisitButton:hover {
+    background-color: var(--darkGreen);
+
+    transform: translateY(-2px);
+}
+
+
+/* NOTEBOOKS */
+
+@media (max-width: 1200px) {
+
+    .technicalVisit {
+        padding: 34px 28px;
+    }
+
+    .technicalVisitContainer {
+        max-width: 1050px;
+    }
+
+    .technicalVisitHeader {
+        margin-bottom: 19px;
+    }
+
+    .technicalVisitHeader h2 {
+        font-size: 27px;
+    }
+
+    .technicalVisitHeader p {
+        font-size: 12px;
+    }
+
+    .technicalVisitContent {
+        gap: 13px;
+    }
+
+    .technicalVisitMain {
+        flex: 1.05;
+
+        padding: 20px 22px;
+    }
+
+    .technicalVisitFlow {
+        flex: 0.95;
+
+        min-width: 300px;
+
+        padding: 18px;
+    }
+
+    .technicalVisitMain > h3 {
+        font-size: 20px;
+    }
+
+    .technicalVisitMain > p {
+        font-size: 12px;
+    }
+
+    .technicalVisitStep {
+        gap: 8px;
+    }
+
+    .technicalVisitNumber {
+        width: 20px;
+    }
+
+    .technicalVisitStepIcon {
+        width: 37px;
+        height: 37px;
+
+        font-size: 15px;
+    }
+
+    .technicalVisitStep h3 {
+        font-size: 14px;
+    }
+
+    .technicalVisitStep p {
+        font-size: 11px;
+    }
+
+    .technicalVisitLine {
+        height: 16px;
+
+        margin-left: 38px;
+    }
+
+    .technicalVisitFooter {
+        margin-top: 13px;
+
+        padding: 13px 17px;
+    }
+}
+
+
+/* TABLET */
+
+@media (max-width: 850px) {
+
+    .technicalVisit {
+        padding: 38px 24px;
+    }
+
+    .technicalVisitContent {
+        flex-direction: column;
+    }
+
+    .technicalVisitMain,
+    .technicalVisitFlow {
+        width: 100%;
+
+        flex: none;
+    }
+
+    .technicalVisitFlow {
+        min-width: 0;
+
+        padding: 20px 22px;
+    }
+
+    .technicalVisitMain {
+        padding: 22px;
+    }
+
+    .technicalVisitMain > p,
+    .technicalVisitHighlight {
+        max-width: none;
+    }
+
+    .technicalVisitStep h3 {
+        font-size: 15px;
+    }
+
+    .technicalVisitStep p {
+        font-size: 12px;
+    }
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .technicalVisit {
+        padding: 32px 18px;
+    }
+
+    .technicalVisitHeader {
+        margin-bottom: 18px;
+    }
+
+    .technicalVisitLabel {
+        margin-bottom: 5px;
+
+        font-size: 8px;
+    }
+
+    .technicalVisitHeader h2 {
+        font-size: 23px;
+        line-height: 1.18;
+    }
+
+    .technicalVisitHeader p {
+        margin-top: 8px;
+
+        font-size: 12px;
+        line-height: 1.45;
+    }
+
+
+    /* CARD BRANCO */
+
+    .technicalVisitMain {
+        padding: 18px;
+
+        border-radius: 10px;
+    }
+
+    .technicalVisitIcon {
+        width: 40px;
+        height: 40px;
+
+        margin-bottom: 12px;
+
+        font-size: 18px;
+    }
+
+    .technicalVisitMain > h3 {
+        max-width: 100%;
+
+        font-size: 18px;
+    }
+
+    .technicalVisitMain > p {
+        font-size: 12px;
+    }
+
+    .technicalVisitHighlight {
+        margin-top: 12px;
+
+        padding: 11px;
+    }
+
+    .technicalVisitHighlight > i {
+        font-size: 17px;
+    }
+
+    .technicalVisitHighlight strong {
+        font-size: 12px;
+    }
+
+    .technicalVisitHighlight span {
+        font-size: 10px;
+    }
+
+
+    /* ETAPAS */
+
+    .technicalVisitFlow {
+        padding: 17px 15px;
+
+        border-radius: 10px;
+    }
+
+    .technicalVisitStep {
+        gap: 8px;
+    }
+
+    .technicalVisitNumber {
+        width: 20px;
+
+        font-size: 9px;
+    }
+
+    .technicalVisitStepIcon {
+        width: 35px;
+        height: 35px;
+
+        font-size: 14px;
+    }
+
+    .technicalVisitStep h3 {
+        font-size: 14px;
+    }
+
+    .technicalVisitStep p {
+        font-size: 11px;
+        line-height: 1.4;
+    }
+
+    .technicalVisitLine {
+        height: 14px;
+
+        margin: 3px 0 3px 37px;
+    }
+
+
+    /* CTA */
+
+    .technicalVisitFooter {
+        margin-top: 12px;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        gap: 11px;
+
+        padding: 14px;
+
+        text-align: center;
+    }
+
+    .technicalVisitFooter strong {
+        font-size: 13px;
+    }
+
+    .technicalVisitButton {
+        width: 100%;
+        min-width: 0;
+
+        height: 42px;
+
+        font-size: 12px;
+    }
+}
+
+
+/* CELULARES PEQUENOS */
+
+@media (max-width: 390px) {
+
+    .technicalVisit {
+        padding: 28px 14px;
+    }
+
+    .technicalVisitHeader h2 {
+        font-size: 21px;
+    }
+
+    .technicalVisitMain {
+        padding: 16px;
+    }
+
+    .technicalVisitFlow {
+        padding: 15px 13px;
+    }
+
+    .technicalVisitStep {
+        gap: 7px;
+    }
+
+    .technicalVisitNumber {
+        width: 18px;
+    }
+
+    .technicalVisitStepIcon {
+        width: 32px;
+        height: 32px;
+
+        font-size: 13px;
+    }
+
+    .technicalVisitStep h3 {
+        font-size: 13px;
+    }
+
+    .technicalVisitStep p {
+        font-size: 10px;
+    }
+
+    .technicalVisitLine {
+        margin-left: 34px;
+    }
+}

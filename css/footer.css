@@ -1,0 +1,497 @@
+/* FOOTER */
+
+.footer {
+    width: 100%;
+
+    margin: 0;
+
+    color: var(--white);
+
+    background-color: #111111;
+}
+
+
+/* ==================================================
+   CONTEÚDO PRINCIPAL
+================================================== */
+
+.footerMain {
+    width: 100%;
+
+    padding: 42px 24px 34px;
+
+    background-color: #111111;
+}
+
+.footerContainer {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 42px;
+}
+
+
+/* ==================================================
+   MARCA
+================================================== */
+
+.footerBrand {
+    width: 32%;
+    max-width: 350px;
+
+    flex-shrink: 0;
+}
+
+.footerLogo {
+    display: inline-flex;
+
+    margin-bottom: 18px;
+}
+
+.footerLogo img {
+    width: 115px;
+    height: auto;
+
+    object-fit: contain;
+}
+
+.footerBrand > p {
+    max-width: 330px;
+
+    color: #999999;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* ==================================================
+   ENDEREÇO
+================================================== */
+
+.footerAddress {
+    margin-top: 17px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+}
+
+.footerAddress i {
+    flex-shrink: 0;
+
+    color: var(--green);
+
+    font-size: 14px;
+}
+
+.footerAddress a {
+    color: #b9b9b9;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    transition: color 0.2s ease-in-out;
+}
+
+.footerAddress a:hover {
+    color: var(--white);
+}
+
+
+/* ==================================================
+   COLUNAS
+================================================== */
+
+.footerColumn {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    font-style: normal;
+}
+
+.footerColumn h3 {
+    position: relative;
+
+    margin-bottom: 8px;
+
+    color: var(--white);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.footerColumn h3::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 24px;
+    height: 2px;
+
+    background-color: var(--green);
+}
+
+.footerColumn > a {
+    color: #999999;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    transition:
+        color 0.2s ease-in-out,
+        transform 0.2s ease-in-out;
+}
+
+.footerColumn > a:hover {
+    color: var(--white);
+
+    transform: translateX(3px);
+}
+
+
+/* ==================================================
+   CONTATO
+================================================== */
+
+.footerContact {
+    min-width: 190px;
+}
+
+.footerContact > a {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    transform: none;
+}
+
+.footerContact > a:hover {
+    transform: none;
+}
+
+.footerContact > a > i {
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #bbbbbb;
+
+    background-color: #1b1b1b;
+
+    border: 1px solid #303030;
+    border-radius: 6px;
+
+    font-size: 12px;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.footerContact > a:hover > i {
+    color: var(--white);
+
+    border-color: #484848;
+}
+
+.footerContact div {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 2px;
+}
+
+.footerContact span {
+    color: #666666;
+
+    font-size: 9px;
+}
+
+.footerContact strong {
+    color: #bdbdbd;
+
+    font-size: 10px;
+    font-weight: 500;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ==================================================
+   PARTE INFERIOR
+================================================== */
+
+.footerBottom {
+    width: 100%;
+
+    padding: 16px 24px;
+
+    background-color: #0b0b0b;
+
+    border-top: 1px solid #292929;
+}
+
+.footerBottomContainer {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+}
+
+.footerBottom p {
+    color: #666666;
+
+    font-size: 10px;
+}
+
+
+/* ==================================================
+   LINKS LEGAIS
+================================================== */
+
+.footerLegal {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+}
+
+.footerLegal a {
+    color: #777777;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    transition: color 0.2s ease-in-out;
+}
+
+.footerLegal a:hover {
+    color: #cccccc;
+}
+
+
+/* ==================================================
+   VOLTAR AO TOPO
+================================================== */
+
+.backToTop {
+    position: fixed;
+
+    right: 31px;
+    bottom: 98px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    visibility: hidden;
+    opacity: 0;
+
+    color: var(--white);
+
+    background-color: #242424;
+
+    border: 1px solid #393939;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    z-index: 850;
+
+    transition: all 0.25s ease-in-out;
+}
+
+.backToTop.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.backToTop:hover {
+    background-color: #333333;
+
+    transform: translateY(-3px);
+}
+
+.backToTop i {
+    font-size: 13px;
+}
+
+
+/* ==================================================
+   NOTEBOOKS / TABLETS
+================================================== */
+
+@media (max-width: 1000px) {
+
+    .footerMain {
+        padding: 36px 28px 30px;
+    }
+
+    .footerContainer {
+        flex-wrap: wrap;
+
+        gap: 32px;
+    }
+
+    .footerBrand {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .footerBrand > p {
+        max-width: 550px;
+    }
+
+    .footerColumn {
+        flex: 1;
+
+        min-width: 160px;
+    }
+}
+
+
+/* ==================================================
+   CELULAR
+================================================== */
+
+@media (max-width: 600px) {
+
+    .footerMain {
+        padding: 30px 20px 26px;
+    }
+
+    .footerContainer {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        align-items: flex-start;
+
+        column-gap: 16px;
+        row-gap: 28px;
+    }
+
+
+    /* MARCA CONTINUA SOZINHA */
+
+    .footerBrand {
+        width: 100%;
+        max-width: 100%;
+
+        flex: 0 0 100%;
+    }
+
+    .footerLogo {
+        margin-bottom: 14px;
+    }
+
+    .footerLogo img {
+        width: 100px;
+    }
+
+    .footerBrand > p {
+        font-size: 11px;
+    }
+
+
+    /* NAVEGAÇÃO E SERVIÇOS LADO A LADO */
+
+    .footerContainer > nav.footerColumn {
+        width: calc(50% - 8px);
+
+        min-width: 0;
+
+        flex: 0 0 calc(50% - 8px);
+
+        gap: 9px;
+    }
+
+    .footerContainer > nav.footerColumn h3 {
+        font-size: 12px;
+    }
+
+    .footerContainer > nav.footerColumn > a {
+        font-size: 10px;
+    }
+
+
+    /* CONTATO CONTINUA SOZINHO ABAIXO */
+
+    .footerContact {
+        width: 100%;
+
+        min-width: 0;
+
+        flex: 0 0 100%;
+    }
+
+    .footerContact > a {
+        max-width: 300px;
+    }
+
+
+    /* PARTE INFERIOR */
+
+    .footerBottom {
+        padding: 15px 18px;
+    }
+
+    .footerBottomContainer {
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+
+    .footerLegal {
+        flex-wrap: wrap;
+
+        gap: 8px 16px;
+    }
+
+
+    /* VOLTAR AO TOPO */
+
+    .backToTop {
+        right: 24px;
+        bottom: 86px;
+
+        width: 38px;
+        height: 38px;
+    }
+}
