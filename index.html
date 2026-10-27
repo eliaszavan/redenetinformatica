@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RedeNet Informática - Paranavaí</title>
+    <title>Rede Net Informática - Paranavaí</title>
 
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/header.css">
@@ -17,10 +16,10 @@
     <link rel="stylesheet" href="css/about_us.css">
     <link rel="stylesheet" href="css/social_media.css">
     <link rel="stylesheet" href="css/footer.css">
+
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
-
 <body>
     <header>
         <div class="info">
@@ -37,13 +36,12 @@
 
         <nav class="navBar">
             <a href="#inicio" class="logoLink">
-                <img src="assets/horizontal_logo.png" alt="RedeNet Informática" id="desktopLogo" class="logo">
-                <img src="assets/logo_extensed.png" alt="RedeNet Informática" id="mobileLogo" class="logo">
+                <img src="assets/horizontal_logo.png" alt="Rede Net Informática" id="desktopLogo" class="logo">
+                <img src="assets/logo_extensed.png" alt="Rede Net Informática" id="mobileLogo" class="logo">
             </a>
 
             <div class="navRight">
                 <div class="menu">
-                    <!--<a href="#inicio" class="active">Início</a>!-->
                     <a href="#inicio">Início</a>
                     <a href="#servicos">Serviços</a>
                     <a href="#visitas">Visitas</a>
@@ -52,7 +50,7 @@
                     <a href="#redes">Redes Sociais</a>
                 </div>
 
-                <a href="#" class="whatsapp">
+                <a href="https://wa.me/554434230666" target="_blank" class="whatsapp">
                     <i class="fa-brands fa-whatsapp"></i>
                     Fale Conosco
                 </a>
@@ -65,50 +63,88 @@
         </nav>
     </header>
 
-    <section class="hero" id="inicio">
-        <div class="heroContent">
-            <h1>
-                <strong>Tecnologia, manutenção</strong><br>
-                e soluções para o <span>seu dia a dia</span>
-            </h1>
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio" aria-label="Banner Rede Net Informática">
+        <div class="heroTrack">
 
-            <p>
-                Assistência técnica especializada em computadores, notebooks,
-                impressoras e muito mais.
-            </p>
+            <!-- banner1 -->
+            <div class="heroSlide heroSlideOne" aria-hidden="true" inert>
+                <div class="heroContent">
+                    <h1>
+                        <strong>Tecnologia, manutenção</strong><br>
+                        e soluções para o <span>seu dia a dia</span>
+                    </h1>
+                    <p>
+                        Assistência técnica especializada em computadores, notebooks,
+                        impressoras e muito mais.
+                    </p>
 
-            <div class="heroButtons">
-                <a href="#avaliacoes" class="heroWhatsapp">
-                    <i class="fa-solid fa-comments"></i>
-                    Depoimentos
-                </a>
-
-                <a href="#servicos" class="heroServices">
-                    <i class="fa-solid fa-star"></i>
-                    Nossos Serviços
-                </a>
+                    <div class="heroButtons">
+                        <a href="#avaliacoes" class="heroWhatsapp">
+                            <i class="fa-solid fa-comments"></i>
+                            Depoimentos
+                        </a>
+                        <a href="#servicos" class="heroServices">
+                            <i class="fa-solid fa-star"></i>
+                            Nossos Serviços
+                        </a>
+                    </div>
+                </div>
             </div>
+
+            <!-- banner2 -->
+            <div class="heroSlide heroSlideTwo" aria-hidden="true" inert>
+                <div class="heroContent">
+                    <h1>
+                        <strong>20 anos de RedeNet.</strong><br>
+                        Lorem, ipsum. <span>Sit, amet consectetur.</span>
+                    </h1>
+
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Voluptatem, rerum.
+                    </p>
+
+                    <div class="heroButtons">
+                        <a href="#sobre" class="heroPrimary">
+                            <i class="fa-solid fa-award"></i>
+                            Nossa História
+                        </a>
+
+                        <a href="#visitas" class="heroSecondary">
+                            <i class="fa-solid fa-wrench"></i>
+                            Agende uma Visita
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="heroDots" aria-label="Selecionar banner">
+            <button type="button" class="heroDot active" aria-label="Mostrar banner principal"
+                aria-current="true"></button>
+
+            <button type="button" class="heroDot" aria-label="Mostrar banner dos 20 anos" aria-current="false"></button>
         </div>
     </section>
 
+    <!-- SERVICES SECTION -->
     <section class="services" id="servicos">
-
         <div class="servicesTitle">
             <span>O QUE FAZEMOS</span>
             <h2>Soluções completas para você</h2>
+
+            <!-- MOBILE DIV -->
             <div class="titleLine"></div>
         </div>
 
         <div class="servicesCarousel">
-
             <button class="serviceArrow servicePrev" aria-label="Serviço anterior">
                 <i class="fa-solid fa-chevron-left"></i>
             </button>
 
             <div class="servicesSlider">
-
                 <div class="servicesTrack">
-
                     <article class="serviceCard">
                         <div class="serviceIcon">
                             <img src="assets/icons/computer_icon.png" alt="">
@@ -116,7 +152,6 @@
 
                         <div class="serviceText">
                             <h3>Computadores</h3>
-
                             <p>
                                 Manutenção, upgrades, formatação e diagnóstico
                                 completo para o seu PC.
@@ -129,7 +164,6 @@
                         </div>
                     </article>
 
-
                     <article class="serviceCard">
                         <div class="serviceIcon">
                             <img src="assets/icons/notebook_icon.png" alt="">
@@ -137,7 +171,6 @@
 
                         <div class="serviceText">
                             <h3>Notebooks</h3>
-
                             <p>
                                 Manutenção especializada, troca de peças,
                                 SSD, memória e muito mais.
@@ -150,7 +183,6 @@
                         </div>
                     </article>
 
-
                     <article class="serviceCard">
                         <div class="serviceIcon">
                             <img src="assets/icons/printer_icon.png" alt="">
@@ -158,7 +190,6 @@
 
                         <div class="serviceText">
                             <h3>Impressoras</h3>
-
                             <p>
                                 Manutenção, limpeza e configuração de impressoras
                                 jato de tinta e laser.
@@ -171,7 +202,6 @@
                         </div>
                     </article>
 
-
                     <article class="serviceCard">
                         <div class="serviceIcon">
                             <img src="assets/icons/gamer_icon.png" alt="">
@@ -179,7 +209,6 @@
 
                         <div class="serviceText">
                             <h3>PC Gamer</h3>
-
                             <p>
                                 Montagem personalizada, upgrades e acessórios
                                 para seu setup gamer.
@@ -192,7 +221,6 @@
                         </div>
                     </article>
 
-
                     <article class="serviceCard">
                         <div class="serviceIcon">
                             <img src="assets/icons/ethernet_icon.png" alt="">
@@ -200,7 +228,6 @@
 
                         <div class="serviceText">
                             <h3>Rede Ethernet e Wifi</h3>
-
                             <p>
                                 Configuramos sua wifi ou cabo de rede
                                 na sua casa. Além de fazermos cabos de rede
@@ -221,7 +248,6 @@
 
                         <div class="serviceText">
                             <h3>Cameras de Segurança</h3>
-
                             <p>
                                 Configuramos suas cameras de segurança
                                 na sua própria residência ou empresa.
@@ -233,33 +259,25 @@
                             </a>
                         </div>
                     </article>
-
                 </div>
-
             </div>
 
             <button class="serviceArrow serviceNext" aria-label="Próximo serviço">
                 <i class="fa-solid fa-chevron-right"></i>
             </button>
-
         </div>
 
         <div class="serviceDots"></div>
-
     </section>
 
     <div class="serviceModal" id="serviceModal">
-
         <div class="serviceModalOverlay"></div>
-
         <div class="serviceModalBox">
-
             <button class="serviceModalClose" aria-label="Fechar modal">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 
             <div class="serviceModalHeader">
-
                 <div class="serviceModalIcon">
                     <i id="modalIcon" class="fa-solid fa-laptop"></i>
                 </div>
@@ -268,22 +286,18 @@
                     <span>SERVIÇOS REDENET</span>
 
                     <h2 id="modalTitle">Notebooks</h2>
-
                     <p id="modalDescription">
                         Manutenção especializada para notebooks.
                     </p>
                 </div>
-
             </div>
 
             <div class="serviceModalLine"></div>
 
             <div class="serviceModalContent">
-
                 <h3>Como podemos ajudar?</h3>
 
                 <div class="serviceModalItems" id="modalItems"></div>
-
                 <div class="serviceModalInfo">
                     <i class="fa-solid fa-circle-info"></i>
 
@@ -291,11 +305,9 @@
                         Traga seu equipamento até a RedeNet para uma avaliação.
                     </p>
                 </div>
-
             </div>
 
             <div class="serviceModalFooter">
-
                 <a href="https://wa.me/554434230666" target="_blank" rel="noopener noreferrer"
                     class="serviceModalWhatsapp">
                     <i class="fa-brands fa-whatsapp"></i>
@@ -305,185 +317,139 @@
                 <button class="serviceModalBack">
                     Continuar navegando
                 </button>
-
             </div>
-
         </div>
-
     </div>
 
-<section class="technicalVisit" id="visitas">
-
-    <div class="technicalVisitContainer">
-
-        <div class="technicalVisitHeader">
-
-            <span class="technicalVisitLabel">
-                ATENDIMENTO ONDE VOCÊ ESTIVER
-            </span>
-
-            <h2>
-                Precisa de ajuda sem levar o equipamento até a loja?
-            </h2>
-
-            <p>
-                A RedeNet também realiza visitas técnicas em residências
-                e empresas. Você nos explica o problema e nossa equipe vai
-                até o local para tentar resolver.
-            </p>
-
-        </div>
-
-
-        <div class="technicalVisitContent">
-
-            <div class="technicalVisitMain">
-
-                <div class="technicalVisitIcon">
-                    <i class="fa-solid fa-house-laptop"></i>
-                </div>
-
-                <span class="technicalVisitSmall">
-                    VISITA TÉCNICA
+    <section class="technicalVisit" id="visitas">
+        <div class="technicalVisitContainer">
+            <div class="technicalVisitHeader">
+                <span class="technicalVisitLabel">
+                    ATENDIMENTO ONDE VOCÊ ESTIVER
                 </span>
 
-                <h3>
-                    Primeiro tentamos resolver no local.
-                </h3>
-
+                <h2>
+                    Precisa de ajuda sem levar o equipamento até a loja?
+                </h2>
                 <p>
-                    Pode ser uma configuração, instalação, problema de rede,
-                    computador, impressora ou qualquer outra necessidade
-                    que possa ser atendida diretamente na sua casa ou empresa.
+                    A RedeNet também realiza visitas técnicas em residências
+                    e empresas. Você nos explica o problema e nossa equipe vai
+                    até o local para tentar resolver.
                 </p>
+            </div>
 
-                <div class="technicalVisitHighlight">
+            <div class="technicalVisitContent">
+                <div class="technicalVisitMain">
+                    <div class="technicalVisitIcon">
+                        <i class="fa-solid fa-house-laptop"></i>
+                    </div>
+                    <span class="technicalVisitSmall">
+                        VISITA TÉCNICA
+                    </span>
 
-                    <i class="fa-solid fa-circle-check"></i>
+                    <h3>
+                        Primeiro tentamos resolver no local.
+                    </h3>
+                    <p>
+                        Pode ser uma configuração, instalação, problema de rede,
+                        computador, impressora ou qualquer outra necessidade
+                        que possa ser atendida diretamente na sua casa ou empresa.
+                    </p>
 
-                    <div>
-                        <strong>Problema resolvido?</strong>
+                    <div class="technicalVisitHighlight">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <div>
+                            <strong>Problema resolvido?</strong>
+                            <span>
+                                O serviço é concluído no local e é cobrado
+                                o valor correspondente à visita e ao atendimento.
+                            </span>
+                        </div>
+                    </div>
+                </div>
 
-                        <span>
-                            O serviço é concluído no local e é cobrado
-                            o valor correspondente à visita e ao atendimento.
+                <div class="technicalVisitFlow">
+                    <div class="technicalVisitStep">
+                        <span class="technicalVisitNumber">
+                            01
                         </span>
+
+                        <div class="technicalVisitStepIcon">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+
+                        <div>
+                            <h3>Conte o problema</h3>
+                            <p>
+                                Entre em contato e explique o que está acontecendo
+                                para entendermos melhor sua necessidade.
+                            </p>
+                        </div>
                     </div>
 
-                </div>
+                    <div class="technicalVisitLine"></div>
 
+                    <div class="technicalVisitStep">
+                        <span class="technicalVisitNumber">
+                            02
+                        </span>
+
+                        <div class="technicalVisitStepIcon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <div>
+                            <h3>Vamos até você</h3>
+                            <p>
+                                Agendamos a visita e tentamos solucionar
+                                o problema diretamente no local.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="technicalVisitLine"></div>
+
+                    <div class="technicalVisitStep">
+                        <span class="technicalVisitNumber">
+                            03
+                        </span>
+
+                        <div class="technicalVisitStepIcon">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+
+                        <div>
+                            <h3>Não resolveu no local?</h3>
+                            <p>
+                                Nesse caso, não cobramos a visita. Se necessário,
+                                levamos o equipamento para nossa assistência técnica
+                                e fazemos um orçamento para o reparo em oficina.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-
-            <div class="technicalVisitFlow">
-
-                <div class="technicalVisitStep">
-
-                    <span class="technicalVisitNumber">
-                        01
-                    </span>
-
-                    <div class="technicalVisitStepIcon">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </div>
-
-                    <div>
-                        <h3>Conte o problema</h3>
-
-                        <p>
-                            Entre em contato e explique o que está acontecendo
-                            para entendermos melhor sua necessidade.
-                        </p>
-                    </div>
-
+            <div class="technicalVisitFooter">
+                <div>
+                    <span>PRECISA DE UMA VISITA?</span>
+                    <strong>
+                        Fale com a RedeNet e explique o que está acontecendo.
+                    </strong>
                 </div>
 
+                <a href="https://wa.me/554434230666" target="_blank" rel="noopener noreferrer"
+                    class="technicalVisitButton">
+                    <i class="fa-brands fa-whatsapp"></i>
 
-                <div class="technicalVisitLine"></div>
-
-
-                <div class="technicalVisitStep">
-
-                    <span class="technicalVisitNumber">
-                        02
-                    </span>
-
-                    <div class="technicalVisitStepIcon">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-
-                    <div>
-                        <h3>Vamos até você</h3>
-
-                        <p>
-                            Agendamos a visita e tentamos solucionar
-                            o problema diretamente no local.
-                        </p>
-                    </div>
-
-                </div>
-
-
-                <div class="technicalVisitLine"></div>
-
-
-                <div class="technicalVisitStep">
-
-                    <span class="technicalVisitNumber">
-                        03
-                    </span>
-
-                    <div class="technicalVisitStepIcon">
-                        <i class="fa-solid fa-screwdriver-wrench"></i>
-                    </div>
-
-                    <div>
-                        <h3>Não resolveu no local?</h3>
-
-                        <p>
-                            Nesse caso, não cobramos a visita. Se necessário,
-                            levamos o equipamento para nossa assistência técnica
-                            e fazemos um orçamento para o reparo em oficina.
-                        </p>
-                    </div>
-
-                </div>
-
+                    Agendar uma visita
+                </a>
             </div>
-
         </div>
-
-
-        <div class="technicalVisitFooter">
-
-            <div>
-                <span>PRECISA DE UMA VISITA?</span>
-
-                <strong>
-                    Fale com a RedeNet e explique o que está acontecendo.
-                </strong>
-            </div>
-
-            <a
-                href="https://wa.me/554434230666"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="technicalVisitButton"
-            >
-                <i class="fa-brands fa-whatsapp"></i>
-
-                Agendar uma visita
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
+    </section>
 
     <section class="reviews" id="avaliacoes">
         <div class="reviewsContainer">
-
             <button class="reviewArrow reviewPrev">
                 <i class="fa-solid fa-chevron-left"></i>
             </button>
@@ -491,13 +457,14 @@
             <div class="reviewsSlider">
                 <div class="reviewsTrack">
 
+                    <!-- Review1 -->
                     <div class="reviewCard">
                         <div class="reviewTop">
-                            <img src="assets/icons/perfil_icon.png" alt="Avaliador" class="reviewPerson">
+                            <img src="assets/reviewers/eloa_pedrosa.png" alt="Avaliador" class="reviewPerson">
                         </div>
 
                         <div class="reviewContent">
-                            <h3>Lorem Ipsum</h3>
+                            <h3>Eloá Pedrosa</h3>
 
                             <div class="reviewStars">
                                 <i class="fa-solid fa-star"></i>
@@ -508,7 +475,7 @@
                             </div>
 
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Gosto muito da loja, sempre compro lá!
                                 Atendimento rápido e serviço de qualidade.
                             </p>
 
@@ -516,14 +483,14 @@
                         </div>
                     </div>
 
-
+                    <!-- Review2 -->
                     <div class="reviewCard">
                         <div class="reviewTop">
-                            <img src="assets/icons/perfil_icon.png" alt="Avaliador" class="reviewPerson">
+                            <img src="assets/reviewers/andreia_prado.png" alt="Avaliador" class="reviewPerson">
                         </div>
 
                         <div class="reviewContent">
-                            <h3>Lorem Ipsum</h3>
+                            <h3>Andreia Prado</h3>
 
                             <div class="reviewStars">
                                 <i class="fa-solid fa-star"></i>
@@ -534,22 +501,22 @@
                             </div>
 
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Atendimento rápido e serviço de qualidade.
+                                Os funcionários são muito educados e pacientes.
+                                Atenderam e resolveram meu problema em um instante!
                             </p>
 
                             <img src="assets/favicon.png" alt="" class="reviewLogo">
                         </div>
                     </div>
 
-
+                    <!-- Review3 -->
                     <div class="reviewCard">
                         <div class="reviewTop">
-                            <img src="assets/icons/perfil_icon.png" alt="Avaliador" class="reviewPerson">
+                            <img src="assets/reviewers/vinicius_martinelli.png" alt="Avaliador" class="reviewPerson">
                         </div>
 
                         <div class="reviewContent">
-                            <h3>Lorem Ipsum</h3>
+                            <h3>Vinícius Martinelli</h3>
 
                             <div class="reviewStars">
                                 <i class="fa-solid fa-star"></i>
@@ -560,22 +527,21 @@
                             </div>
 
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Atendimento rápido e serviço de qualidade.
+                                Loja muito boa, mexem com tudo! São rápidos e prestativos.
                             </p>
 
                             <img src="assets/favicon.png" alt="" class="reviewLogo">
                         </div>
                     </div>
 
-
+                    <!-- Review4 -->
                     <div class="reviewCard">
                         <div class="reviewTop">
-                            <img src="assets/icons/perfil_icon.png" alt="Avaliador" class="reviewPerson">
+                            <img src="assets/reviewers/default.png" alt="Avaliador" class="reviewPerson">
                         </div>
 
                         <div class="reviewContent">
-                            <h3>Lorem Ipsum</h3>
+                            <h3>Vinicius Caleffi</h3>
 
                             <div class="reviewStars">
                                 <i class="fa-solid fa-star"></i>
@@ -586,22 +552,21 @@
                             </div>
 
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                Atendimento rápido e serviço de qualidade.
+                                Serviço bem feito, gente honesta e confiável.
                             </p>
 
                             <img src="assets/favicon.png" alt="" class="reviewLogo">
                         </div>
                     </div>
 
-
+                    <!-- Review5 -->
                     <div class="reviewCard">
                         <div class="reviewTop">
-                            <img src="assets/icons/perfil_icon.png" alt="Avaliador" class="reviewPerson">
+                            <img src="assets/reviewers/jakeline_parron.png" alt="Avaliador" class="reviewPerson">
                         </div>
 
                         <div class="reviewContent">
-                            <h3>Lorem Ipsum</h3>
+                            <h3>Jakeline Parron</h3>
 
                             <div class="reviewStars">
                                 <i class="fa-solid fa-star"></i>
@@ -612,7 +577,7 @@
                             </div>
 
                             <p>
-                                ddd
+                                Incrivel variedade de produtos e serviços, gosto muito da loja.
                             </p>
 
                             <img src="assets/favicon.png" alt="" class="reviewLogo">
@@ -631,19 +596,15 @@
     </section>
 
     <section class="googleReviews">
-
         <div class="googleReviewsContainer">
-
             <div class="googleReviewsIcon">
                 <img src="assets/google_logo.png" alt="Google">
             </div>
 
             <div class="googleReviewsContent">
-
                 <span>SUA OPINIÃO É IMPORTANTE</span>
 
                 <h2>Como foi sua experiência com a RedeNet?</h2>
-
                 <p>
                     Seu feedback nos ajuda a melhorar cada vez mais
                     e também ajuda outras pessoas a conhecerem nosso trabalho.
@@ -656,11 +617,9 @@
                     <i class="fa-solid fa-star"></i>
                     <i class="fa-solid fa-star"></i>
                 </div>
-
             </div>
 
             <div class="googleReviewsAction">
-
                 <a href="https://search.google.com/local/writereview?placeid=ChIJy7AXHPqXkpQR2KSYTKijC3Y&utm_source=chatgpt.com"
                     target="_blank" rel="noopener noreferrer" class="googleReviewButton">
                     <img src="assets/google_logo.png" alt="">
@@ -670,18 +629,13 @@
                 <small>
                     Leva menos de um minuto.
                 </small>
-
             </div>
-
         </div>
-
     </section>
+
     <section class="aboutUs" id="sobre">
-
         <div class="aboutUsContainer">
-
             <div class="aboutUsIdentity">
-
                 <div class="aboutUsBrand">
                     <span class="aboutUsSmall">REDENET INFORMÁTICA</span>
 
@@ -703,12 +657,9 @@
                         Paranavaí • Paraná
                     </span>
                 </div>
-
             </div>
 
-
             <div class="aboutUsContent">
-
                 <span class="aboutUsLabel">
                     SOBRE A REDENET
                 </span>
@@ -719,22 +670,18 @@
                 </h2>
 
                 <p class="aboutUsIntro">
-                    A RedeNet faz parte da rotina de clientes que procuram
-                    mais do que uma solução técnica. Ao longo de sua trajetória,
-                    a empresa construiu uma relação baseada em atendimento próximo,
-                    responsabilidade e confiança.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Eveniet optio corporis sequi corrupti sunt. Lorem ipsum.
+                    Ipsum animi numquam minima nemo officia. Dit, ameret.
                 </p>
-
                 <p>
-                    Cada atendimento é tratado com atenção e transparência.
-                    O compromisso é entender a necessidade de cada cliente,
-                    orientar de forma clara e realizar um trabalho cuidadoso,
-                    mantendo a qualidade que representa o nome RedeNet.
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    olor optio natus nobis, ipsum illo fugiat tempora recusandae pariatur ex molestias
+                    quis harum mollitia saepe! Modi quisquam nam quidem tempora at odio quibusdam,
+                    deleniti nihil nisi reprehenderit.
                 </p>
-
 
                 <div class="aboutUsValues">
-
                     <div class="aboutUsValue">
                         <span>01</span>
 
@@ -747,7 +694,6 @@
                             </p>
                         </div>
                     </div>
-
 
                     <div class="aboutUsValue">
                         <span>02</span>
@@ -762,299 +708,180 @@
                         </div>
                     </div>
 
-
                     <div class="aboutUsValue">
                         <span>03</span>
 
                         <div>
                             <h3>Proximidade</h3>
-
                             <p>
                                 Atendimento humano, comunicação clara
                                 e relacionamento próximo com cada cliente.
                             </p>
                         </div>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
     <section class="socialMedia" id="redes">
+        <div class="socialMediaContainer">
+            <div class="socialMediaText">
+                <span>CONECTE-SE COM A REDENET</span>
 
-    <div class="socialMediaContainer">
+                <h2>
+                    Acompanhe nossas redes sociais
+                </h2>
+            </div>
+            <div class="socialMediaLinks">
+                <a href="#" target="_blank" rel="noopener noreferrer" class="socialInstagram" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
 
-        <div class="socialMediaText">
-            <span>CONECTE-SE COM A REDENET</span>
-
-            <h2>
-                Acompanhe nossas redes sociais
-            </h2>
-        </div>
-
-
-        <div class="socialMediaLinks">
-
-            <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="socialInstagram"
-                aria-label="Instagram"
-            >
-                <i class="fa-brands fa-instagram"></i>
-
-                <span>Instagram</span>
-            </a>
-
-
-            <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="socialYoutube"
-                aria-label="YouTube"
-            >
-                <i class="fa-brands fa-youtube"></i>
-
-                <span>YouTube</span>
-            </a>
-
-
-            <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="socialFacebook"
-                aria-label="Facebook"
-            >
-                <i class="fa-brands fa-facebook-f"></i>
-
-                <span>Facebook</span>
-            </a>
-
-        </div>
-
-    </div>
-<footer class="footer">
-
-    <div class="footerMain">
-
-        <div class="footerContainer">
-
-            <!-- MARCA -->
-
-            <div class="footerBrand">
-
-                <a href="#inicio" class="footerLogo">
-                    <img
-                        src="assets/horizontal_logo.png"
-                        alt="RedeNet Informática"
-                    >
+                    <span>Instagram</span>
                 </a>
 
-                <p>
-                    Tecnologia, confiança e atendimento próximo.
-                    A RedeNet Informática atende Paranavaí e região
-                    com compromisso, transparência e cuidado em
-                    cada atendimento.
-                </p>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="socialYoutube" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
 
-                <div class="footerAddress">
+                    <span>YouTube</span>
+                </a>
 
-                    <i class="fa-solid fa-location-dot"></i>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="socialFacebook" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
 
-                    <a
-                        href="https://share.google/7xHJjoZGep4e3vBHG"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Av. Paraná, 205 - Paranavaí/PR
-                    </a>
+                    <span>Facebook</span>
+                </a>
+            </div>
+        </div>
 
+        <footer class="footer">
+            <div class="footerMain">
+                <div class="footerContainer">
+
+                    <!-- About -->
+                    <div class="footerBrand">
+                        <a href="#inicio" class="footerLogo">
+                            <img src="assets/horizontal_logo.png" alt="RedeNet Informática">
+                        </a>
+
+                        <p>
+                            Tecnologia, confiança e atendimento próximo.
+                            A RedeNet Informática atende Paranavaí e região
+                            com compromisso, transparência e cuidado em
+                            cada atendimento.
+                        </p>
+
+                        <div class="footerAddress">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <a href="https://share.google/7xHJjoZGep4e3vBHG" target="_blank" rel="noopener noreferrer">
+                                Av. Paraná, 205 - Paranavaí/PR
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <!-- Navbar -->
+
+                    <nav class="footerColumn" aria-label="Navegação do rodapé">
+                        <h3>Navegação</h3>
+
+                        <a href="#inicio">Início</a>
+                        <a href="#servicos">Serviços</a>
+                        <a href="#avaliacoes">Avaliações</a>
+                        <a href="#visitas">Visitas técnicas</a>
+                        <a href="#sobre">Sobre nós</a>
+                        <a href="#redes">Redes sociais</a>
+                    </nav>
+
+                    <!-- Services -->
+                    <nav class="footerColumn" aria-label="Serviços da RedeNet">
+                        <h3>Serviços</h3>
+
+                        <a href="#servicos">
+                            Computadores
+                        </a>
+                        <a href="#servicos">
+                            Notebooks
+                        </a>
+                        <a href="#servicos">
+                            Impressoras
+                        </a>
+                        <a href="#servicos">
+                            Redes e Wi-Fi
+                        </a>
+                        <a href="#servicos">
+                            Câmeras de segurança
+                        </a>
+                        <a href="#visitas">
+                            Visita técnica
+                        </a>
+                    </nav>
+
+                    <!-- CONTACT -->
+                    <address class="footerColumn footerContact">
+                        <h3>Fale conosco</h3>
+
+                        <a href="https://wa.me/554434230666" target="_blank">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <span>Telefone</span>
+                                <strong>(44) 3423-0666</strong>
+                            </div>
+                        </a>
+
+                        <a href="https://wa.me/554434230666" target="_blank" rel="noopener noreferrer">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <div>
+                                <span>WhatsApp</span>
+                                <strong>(44) 3423-0666</strong>
+                            </div>
+                        </a>
+
+                        <a href="mailto:atendimento@redenetinformatica.com.br">
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <div>
+                                <span>E-mail</span>
+                                <strong>atendimento@redenetinformatica.com.br</strong>
+                            </div>
+                        </a>
+                    </address>
                 </div>
-
             </div>
 
+            <!-- Others -->
+            <div class="footerBottom">
+                <div class="footerBottomContainer">
+                    <p>
+                        © <span id="footerYear"></span>
+                        RedeNet Informática. Todos os direitos reservados.
+                    </p>
 
-            <!-- NAVEGAÇÃO -->
+                    <nav class="footerLegal" aria-label="Informações legais">
+                        <a href="#">
+                            Política de Privacidade
+                        </a>
+                        <a href="#">
+                            Termos de Uso
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </footer>
 
-            <nav
-                class="footerColumn"
-                aria-label="Navegação do rodapé"
-            >
+        <button class="backToTop" id="backToTop" aria-label="Voltar ao topo">
+            <i class="fa-solid fa-chevron-up"></i>
+        </button>
+    </section>
 
-                <h3>Navegação</h3>
-
-                <a href="#inicio">Início</a>
-
-                <a href="#servicos">Serviços</a>
-
-                <a href="#avaliacoes">Avaliações</a>
-
-                <a href="#visitas">Visitas técnicas</a>
-
-                <a href="#sobre">Sobre nós</a>
-
-                <a href="#redes">Redes sociais</a>
-
-            </nav>
-
-
-            <!-- SERVIÇOS -->
-
-            <nav
-                class="footerColumn"
-                aria-label="Serviços da RedeNet"
-            >
-
-                <h3>Serviços</h3>
-
-                <a href="#servicos">
-                    Computadores
-                </a>
-
-                <a href="#servicos">
-                    Notebooks
-                </a>
-
-                <a href="#servicos">
-                    Impressoras
-                </a>
-
-                <a href="#servicos">
-                    Redes e Wi-Fi
-                </a>
-
-                <a href="#servicos">
-                    Câmeras de segurança
-                </a>
-
-                <a href="#visitas">
-                    Visita técnica
-                </a>
-
-            </nav>
-
-
-            <!-- CONTATO -->
-
-            <address class="footerColumn footerContact">
-
-                <h3>Fale conosco</h3>
-
-
-                <a href="tel:+554434230666">
-
-                    <i class="fa-solid fa-phone"></i>
-
-                    <div>
-                        <span>Telefone</span>
-
-                        <strong>
-                            (44) 3423-0666
-                        </strong>
-                    </div>
-
-                </a>
-
-
-                <a
-                    href="https://wa.me/554434230666"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-
-                    <i class="fa-brands fa-whatsapp"></i>
-
-                    <div>
-                        <span>WhatsApp</span>
-
-                        <strong>
-                            (44) 3423-0666
-                        </strong>
-                    </div>
-
-                </a>
-
-
-                <a href="mailto:vendas2@redenetinfo.com">
-
-                    <i class="fa-solid fa-envelope"></i>
-
-                    <div>
-                        <span>E-mail</span>
-
-                        <strong>
-                            vendas2@redenetinfo.com
-                        </strong>
-                    </div>
-
-                </a>
-
-            </address>
-
-        </div>
-
-    </div>
-
-
-    <!-- PARTE INFERIOR -->
-
-    <div class="footerBottom">
-
-        <div class="footerBottomContainer">
-
-            <p>
-                © <span id="footerYear"></span>
-                RedeNet Informática. Todos os direitos reservados.
-            </p>
-
-
-            <nav
-                class="footerLegal"
-                aria-label="Informações legais"
-            >
-
-                <a href="politica-de-privacidade.html">
-                    Política de Privacidade
-                </a>
-
-                <a href="termos-de-uso.html">
-                    Termos de Uso
-                </a>
-
-            </nav>
-
-        </div>
-
-    </div>
-
-</footer>
-
-
-<button
-    class="backToTop"
-    id="backToTop"
-    aria-label="Voltar ao topo"
->
-    <i class="fa-solid fa-chevron-up"></i>
-</button>
-
-</section>
     <a href="#" class="floatingWhatsapp" aria-label="Fale conosco pelo WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-
     <script src="js/main.js"></script>
     <script src="js/reviews.js"></script>
+    <script src="js/hero.js"></script>
     <script src="js/services/services.js"></script>
     <script src="js/services/services_modal.js"></script>
 </body>
-
 </html>
