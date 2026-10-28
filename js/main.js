@@ -1,133 +1,220 @@
 const menuToggle = document.querySelector('.menuToggle');
 const menu = document.querySelector('.menu');
 
+
+/* ========================================
+   MENU MOBILE
+======================================== */
+
 menuToggle.addEventListener('click', () => {
+
     menu.classList.toggle('open');
+
     menuToggle.classList.toggle('open');
 });
 
-const menuLinks = document.querySelectorAll('.menu a');
+
+const menuLinks = document.querySelectorAll(
+    ".menu a[href^='#']"
+);
+
 
 menuLinks.forEach(link => {
+
     link.addEventListener('click', () => {
+
         menu.classList.remove('open');
+
         menuToggle.classList.remove('open');
     });
 });
+
+
 /* ========================================
    NAVEGAÇÃO ATIVA POR SEÇÃO
 ======================================== */
 
-function initActiveSection() {
-    const sections = [...document.querySelectorAll("section[id]")];
-    const menuLinks = [...document.querySelectorAll(".menu a[href^='#']")];
-    const header = document.querySelector("header");
+function updateActiveSection() {
 
-    if (!sections.length || !menuLinks.length) return;
+    const header = document.querySelector('header');
 
-    // Localiza os links da navbar pelo href ou pelo texto
-    function findMenuLink(keywords) {
-        return menuLinks.find(link => {
-            const href = link.getAttribute("href").toLowerCase();
-            const text = link.textContent.toLowerCase();
 
-            return keywords.some(keyword =>
-                href.includes(keyword) || text.includes(keyword)
-            );
-        });
-    }
+    const headerHeight = header
+        ? header.offsetHeight
+        : 0;
 
-    // Identifica automaticamente as seções
-    function findSection(keywords) {
-        return sections.find(section =>
-            keywords.some(keyword =>
-                section.id.toLowerCase().includes(keyword)
-            )
-        );
-    }
 
-    const inicioLink =
-        findMenuLink(["inicio", "início"]) || menuLinks[0];
+    /*
+        Linha imaginária usada para decidir
+        qual seção está ativa.
 
-    const servicosLink =
-        findMenuLink(["servicos", "serviços", "servico", "services"]);
+        Ela fica um pouco abaixo do header.
+    */
 
-    const reviewsLink =
-        findMenuLink(["reviews", "avaliacoes", "avaliações", "avaliacao"]);
+    const activationPoint =
+        window.scrollY +
+        headerHeight +
+        100;
 
-    const reviewsSection =
-        findSection(["reviews", "review", "avaliacoes", "avaliações"]) ||
-        sections.find(section => {
-            const link = reviewsLink;
-            return link &&
-                link.getAttribute("href") === `#${section.id}`;
-        });
 
-    function setActiveLink(activeLink) {
-        menuLinks.forEach(link => {
-            link.classList.toggle("active", link === activeLink);
-        });
-    }
+    let currentSection = null;
 
-    function updateActiveSection() {
-        const scrollY = window.scrollY;
-        const headerHeight = header
-            ? header.getBoundingClientRect().height
-            : 0;
 
-        // 1. No topo, mantém Início ativo
-        if (scrollY <= 50) {
-            setActiveLink(inicioLink);
+    menuLinks.forEach(link => {
+
+        const href = link.getAttribute('href');
+
+
+        if (!href || href === '#') {
             return;
         }
 
-        // 2. Depois de 50px, Serviços passa a ser o padrão
-        let activeLink = servicosLink || inicioLink;
 
-        // 3. Só ativa Reviews quando chegar ao momento adequado
-        if (reviewsSection && reviewsLink) {
-            const reviewsTop =
-                reviewsSection.getBoundingClientRect().top + scrollY;
+        const section =
+            document.querySelector(href);
 
-            // Evita ativar Reviews apenas porque ela já está
-            // parcialmente visível na entrada da página.
-            const minimumScroll = window.innerHeight * 0.5;
 
-            const reviewsActivationPoint = Math.max(
-                minimumScroll,
-                reviewsTop - headerHeight - 50
-            );
-
-            const isAtBottom =
-                window.scrollY + window.innerHeight >=
-                document.documentElement.scrollHeight - 2;
-
-            if (
-                scrollY >= reviewsActivationPoint ||
-                isAtBottom
-            ) {
-                activeLink = reviewsLink;
-            }
+        if (!section) {
+            return;
         }
 
-        setActiveLink(activeLink);
-    }
 
-    // Eventos
-    window.addEventListener("scroll", updateActiveSection, {
-        passive: true
+        /*
+            Se o topo da seção já passou
+            pelo ponto de ativação,
+            ela se torna a seção atual.
+        */
+
+        if (
+            section.offsetTop <=
+            activationPoint
+        ) {
+
+            currentSection = section;
+        }
     });
 
-    window.addEventListener("resize", updateActiveSection);
-    window.addEventListener("hashchange", updateActiveSection);
 
-    // Estado inicial
-    updateActiveSection();
+    /*
+        Se estiver praticamente no final
+        da página, ativa a última seção
+        existente no menu.
+    */
+
+    const isAtBottom =
+        window.innerHeight +
+        window.scrollY >=
+        document.documentElement.scrollHeight - 5;
+
+
+    if (isAtBottom) {
+
+        for (
+            let i = menuLinks.length - 1;
+            i >= 0;
+            i--
+        ) {
+
+            const href =
+                menuLinks[i].getAttribute('href');
+
+
+            if (!href || href === '#') {
+                continue;
+            }
+
+
+            const section =
+                document.querySelector(href);
+
+
+            if (section) {
+
+                currentSection = section;
+
+                break;
+            }
+        }
+    }
+
+
+    /* REMOVE TODOS OS ACTIVE */
+
+    menuLinks.forEach(link => {
+
+        link.classList.remove('active');
+    });
+
+
+    /* ATIVA O LINK DA SEÇÃO ATUAL */
+
+    if (currentSection) {
+
+        const activeLink =
+            document.querySelector(
+                `.menu a[href="#${currentSection.id}"]`
+            );
+
+
+        if (activeLink) {
+
+            activeLink.classList.add('active');
+        }
+    }
 }
 
-// Aguarda o HTML estar disponível
-if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initActiveSection);
-} else {
-    initActiveSection();
+
+/* ========================================
+   EVENTOS
+======================================== */
+
+window.addEventListener(
+    'scroll',
+    updateActiveSection,
+    {
+        passive: true
+    }
+);
+
+
+window.addEventListener(
+    'resize',
+    updateActiveSection
+);
+
+
+/* ESTADO INICIAL */
+
+updateActiveSection();
+
+/* ========================================
+   OFFSET DO HEADER PARA NAVEGAÇÃO
+======================================== */
+
+const header = document.querySelector('header');
+
+function updateHeaderOffset() {
+
+    if (!header) {
+        return;
+    }
+
+    const headerHeight = header.offsetHeight;
+
+    document.documentElement.style.setProperty(
+        '--headerOffset',
+        `${headerHeight + 15}px`
+    );
 }
+
+window.addEventListener(
+    'load',
+    updateHeaderOffset
+);
+
+window.addEventListener(
+    'resize',
+    updateHeaderOffset
+);
+
+updateHeaderOffset();
