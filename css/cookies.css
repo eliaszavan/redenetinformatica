@@ -1,0 +1,30 @@
+/* Cookie consent: apenas exibe banner quando o Analytics estiver habilitado. */
+.cookiePreferencesLink {border:0;padding:0;color:#777;background:none;font:inherit;font-size:10px;cursor:pointer;text-align:left}
+.cookiePreferencesLink:hover {color:#ccc;text-decoration:underline}
+.cookieBanner[hidden], .cookieOverlay[hidden] {display:none!important}
+.cookieBanner {position:fixed;left:20px;bottom:20px;z-index:2000;width:min(480px,calc(100vw - 40px));background:#111;color:#f6f6f6;border:1px solid #3c3c3c;border-radius:12px;padding:21px;box-shadow:0 12px 40px rgba(0,0,0,.28);font:14px/1.5 Arial,Helvetica,sans-serif}
+.cookieBanner h2 {color:#fff;margin:0 0 9px;font-size:18px}
+.cookieBanner p {margin:0 0 13px;color:#ddd}
+.cookieBanner a {color:#b3dd86}
+.cookieActions {display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+.cookieBtn {border:1px solid #4e9c39;border-radius:7px;padding:10px 16px;font:600 13px Arial,Helvetica,sans-serif;cursor:pointer;min-height:40px}
+.cookieBtnPrimary {background:#4e9c39;color:#fff}
+.cookieBtnPrimary:hover {background:#3e7d2a}
+.cookieBtnSecondary {background:transparent;color:#d6ead0;border-color:#8a9788}
+.cookieBtnSecondary:hover {background:#252e25}
+.cookieBtnNeutral {background:transparent;color:#fff;border-color:#424e41}
+.cookieBtnNeutral:hover {background:#263126}
+.cookieOverlay {position:fixed;inset:0;z-index:2100;display:flex;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.65)}
+.cookieModal {width:min(520px,100%);max-height:min(90vh,800px);overflow:auto;background:#fff;color:#243024;border-radius:12px;padding:26px;font:14px/1.55 Arial,Helvetica,sans-serif;box-shadow:0 18px 60px rgba(0,0,0,.26)}
+.cookieModal h2 {margin:0 0 12px;font-size:21px;color:#244b24}
+.cookieModal p {margin:0 0 13px}
+.cookieModal .cookieBtnSecondary {color:#244b24;border-color:#b5c3b5}
+.cookieModal .cookieBtnSecondary:hover {background:#edf5e9}
+.cookieCategory {display:flex;align-items:flex-start;gap:14px;border:1px solid #dfe7dd;border-radius:8px;padding:14px;margin:12px 0}
+.cookieCategory strong {display:block;margin-bottom:4px}
+.cookieCategory p {font-size:13px;color:#596659;margin:0}
+.cookieCategory input {margin-left:auto;min-width:19px;width:19px;height:19px;accent-color:#4e9c39}
+.cookieCategoryLabel {flex:1}
+.cookieClose {float:right;border:0;background:none;color:#405540;cursor:pointer;font-size:24px;line-height:1;padding:0 3px}
+.cookieModal a {color:#2f762b}
+@media(max-width:600px) {.cookieBanner{left:10px;bottom:10px;width:calc(100vw - 20px);padding:16px}.cookieModal{padding:20px}.cookieActions .cookieBtn{flex:1}}

@@ -1,0 +1,23 @@
+/* Páginas legais independentes do layout One Page. */
+:root { --verde: #4e9c39; --verde-escuro: #3e7d2a; --cinza: #373e3d; }
+* {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {margin:0; background:#f7f8f7; color:#27322b; font:16px/1.7 Arial,Helvetica,sans-serif}
+a {color:#327a2a} a:hover {color:#245f1e}
+.legalHeader {background:white;border-bottom:1px solid #e2e8e2}
+.legalHeaderInner {max-width:1000px;margin:auto;min-height:86px;padding:15px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.legalLogo img {width:170px;max-width:48vw;height:auto;display:block}
+.legalBack {font-weight:700;text-decoration:none;font-size:14px}
+.legalMain {max-width:900px;margin:50px auto 70px;padding:42px 48px;background:white;border-radius:14px;box-shadow:0 8px 30px rgba(12,24,15,.06)}
+.legalKicker {color:var(--verde-escuro);text-transform:uppercase;letter-spacing:.09em;font-size:12px;font-weight:700}
+h1 {margin:8px 0 7px;font-size:clamp(28px,5vw,38px);line-height:1.2;color:#182c1b}
+.legalUpdated {color:#6e796e;font-size:13px;margin:0 0 28px}
+h2 {margin:32px 0 9px;font-size:21px;line-height:1.3;color:#244b24}
+p {margin:10px 0} li {margin:5px 0} ul {padding-left:21px}
+.legalNote {background:#f1f7ee;border-left:3px solid var(--verde);padding:12px 18px;border-radius:5px}
+.legalFooter {background:#111;color:#bdbdbd;padding:26px 24px;text-align:center;font-size:13px}
+.legalFooter a,.legalFooter button {color:#d8e6d8}
+.legalFooterInner {display:flex;justify-content:center;flex-wrap:wrap;gap:12px 22px;align-items:center}
+.legalFooter button {border:0;background:none;cursor:pointer;text-decoration:underline;font:inherit}
+.legalFooter p {margin:10px 0 0;font-size:12px}
+@media(max-width:650px) {.legalHeaderInner{min-height:75px}.legalLogo img{width:125px}.legalMain{margin:16px 12px 36px;padding:24px 21px;border-radius:10px}h2{font-size:19px}}
