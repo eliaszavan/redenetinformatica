@@ -28,6 +28,32 @@ a:hover {
     color: #245f1e
 }
 
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #327a2a;
+    outline-offset: 3px
+}
+
+
+
+.legalSkip {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    padding: 10px 14px;
+    background: var(--verde-escuro);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transform: translateY(-150%);
+    transition: transform .2s ease
+}
+
+.legalSkip:focus {
+    transform: translateY(0)
+}
+
 .legalHeader {
     background: white;
     border-bottom: 1px solid #e2e8e2

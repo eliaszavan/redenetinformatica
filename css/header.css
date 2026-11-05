@@ -1,31 +1,26 @@
+/* HEADER */
 
-/* ========================================
-   HEADER
-======================================== */
 header {
     background-color: var(--white);
     width: 100%;
-
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 1000
 }
+
 .logoLink {
     display: flex;
-    align-items: center;
+    align-items: center
 }
 
 .logo {
-    max-width: 56px;
+    max-width: 56px
 }
 
-
-/* ========================================
-   LOGOS
-======================================== */
+/* LOGOS */
 
 header #desktopLogo {
-    display: block;
+    display: block
 }
 
 header #mobileLogo {
@@ -35,262 +30,209 @@ header #mobileLogo {
     height: auto;
     flex: 0 1 auto;
     min-width: 0;
-    object-fit: contain;
+    object-fit: contain
 }
 
-
-/* ========================================
-   INFO
-======================================== */
+/* INFO */
 
 .info {
     max-width: 100%;
     height: 36px;
-
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 48px;
-
-    background-color: var(--black);
+    background-color: var(--black)
 }
 
 .info a {
     text-decoration: none;
     color: var(--white);
-
     display: flex;
     align-items: center;
     gap: 12px;
-
-    font-size: 16px;
+    font-size: 16px
 }
 
 .info a:hover i {
-    color: var(--lightGreen);
+    color: var(--lightGreen)
 }
 
 .info i {
     font-size: 16px;
     color: var(--green);
-
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out
 }
 
-
-/* ========================================
-   NAVBAR
-======================================== */
-
+/* NAVBAR */
 
 .navBar {
-    
     height: 100px;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     max-width: 1600px;
-
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 24px
 }
 
 .navRight {
     display: flex;
     align-items: center;
-    gap: 96px;
+    gap: 96px
 }
 
 .menu {
     display: flex;
     align-items: center;
-    gap: 56px;
+    gap: 56px
 }
 
 .menu a {
     position: relative;
-
     text-decoration: none;
     color: var(--black);
-
     font-size: 16px;
     font-weight: 600;
-
-    transition: color 0.2s ease-in-out;
+    transition: color 0.2s ease-in-out
 }
 
 .menu a:hover {
-    color: var(--green);
+    color: var(--darkGreen)
 }
 
 .menu a.active {
-    color: var(--green);
+    color: var(--darkGreen)
 }
 
 .menu a.active::after {
     content: "";
-
     position: absolute;
-
     width: 100%;
     height: 2px;
-
     left: 0;
     bottom: -15px;
-
-    background-color: var(--green);
+    background-color: var(--green)
 }
 
-
-/* ========================================
-   WHATSAPP NAVBAR
-======================================== */
+/* WHATSAPP NAVBAR */
 
 .whatsapp {
     text-decoration: none;
-
-    background-color: var(--green);
+    background-color: var(--darkGreen);
     color: var(--white);
-
     padding: 14px 28px;
     border-radius: 4px;
-
     font-size: 14px;
     font-weight: 600;
-
     display: flex;
     align-items: center;
     gap: 8px;
-
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out
 }
 
 .whatsapp i {
-    font-size: 20px;
+    font-size: 20px
 }
 
 .whatsapp:hover {
-    background-color: var(--darkGreen);
+    background-color: #315f23
 }
 
-
-/* ========================================
-   MENU TOGGLE
-======================================== */
+/* MENU TOGGLE */
 
 .menuToggle {
-    display: none;
+    display: none
 }
 
+/* RESPONSIVIDADE */
 
-/* ========================================
-   RESPONSIVIDADE
-======================================== */
+/* TELAS ATE 1201PX */
 
-
-/* ----------------------------------------
-   TELAS ATE 1201PX
----------------------------------------- */
-
-@media (max-width: 1201px) {
-
+@media(max-width:1201px) {
     .navBar {
         position: relative;
         padding: 0 20px;
-        gap: 16px;
+        gap: 16px
     }
 
     .navRight {
         gap: 45px;
-        flex-shrink: 0;
+        flex-shrink: 0
     }
 
     .menu {
-        gap: 28px;
+        gap: 28px
     }
 
     .whatsapp {
-        display: none;
+        display: none
     }
 }
 
+/* TABLETS - ATE 968PX */
 
-/* ----------------------------------------
-   TABLETS - ATE 968PX
----------------------------------------- */
-
-@media (max-width: 968px) {
-
+@media(max-width:968px) {
     /* INFO */
 
     .info {
         height: auto;
         flex-direction: column;
         gap: 8px;
-        padding: 14px 20px;
+        padding: 14px 20px
     }
 
     .info a,
     .info i {
-        font-size: 14px;
+        font-size: 14px
     }
 
     /* NAVBAR */
 
     .navBar {
-        gap: 12px;
+        gap: 12px
     }
 
     .navRight {
-        gap: 16px;
+        gap: 16px
     }
 
     /* MENU */
 
     .menu {
-        display: none;
+        display: none
     }
 
     .menu.open {
         display: flex;
-
         position: absolute;
         top: 100%;
         left: 0;
-
         width: 100%;
         box-sizing: border-box;
-
         flex-direction: column;
         align-items: center;
         gap: 0;
-
         padding: 16px 20px;
-
         background-color: var(--white);
         box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
-
-        z-index: 1000;
+        z-index: 1000
     }
 
     .menu.open a {
         width: 100%;
         box-sizing: border-box;
-
         padding: 14px 0;
         text-align: center;
-
-        border-bottom: 1px solid #eeeeee;
+        border-bottom: 1px solid #eeeeee
     }
 
     .menu.open a:last-child {
-        border-bottom: none;
+        border-bottom: none
     }
 
     .menu.open a.active::after {
-        display: none;
+        display: none
     }
 
     /* MENU TOGGLE */
@@ -299,83 +241,68 @@ header #mobileLogo {
         display: flex;
         align-items: center;
         justify-content: center;
-
         position: relative;
         flex-shrink: 0;
-
         width: 32px;
         height: 32px;
-
         background: transparent;
         border: none;
-
         color: var(--black);
-        cursor: pointer;
+        cursor: pointer
     }
 
     .menuIcon {
         position: absolute;
-
         font-size: 26px;
-
-        transition:
-            opacity 0.25s ease,
-            transform 0.25s ease;
+        transition: opacity 0.25s ease,
+            transform 0.25s ease
     }
 
     .barsIcon {
         opacity: 1;
-        transform: rotate(0deg);
+        transform: rotate(0deg)
     }
 
     .closeIcon {
         opacity: 0;
-        transform: rotate(-90deg);
+        transform: rotate(-90deg)
     }
 
     .menuToggle.open .barsIcon {
         opacity: 0;
-        transform: rotate(90deg);
+        transform: rotate(90deg)
     }
 
     .menuToggle.open .closeIcon {
         opacity: 1;
-        transform: rotate(0deg);
+        transform: rotate(0deg)
     }
 }
 
+/* TROCA DE LOGOS - ATE 699PX */
 
-/* ----------------------------------------
-   TROCA DE LOGOS - ATE 699PX
----------------------------------------- */
-
-@media (max-width: 699px) {
-
+@media(max-width:699px) {
     header #desktopLogo {
-        display: none;
+        display: none
     }
 
     header #mobileLogo {
-        display: block;
+        display: block
     }
 }
 
+/* SMARTPHONES - ATE 600PX */
 
-/* ----------------------------------------
-   SMARTPHONES - ATE 600PX
----------------------------------------- */
-
-@media (max-width: 600px) {
-
+@media(max-width:600px) {
     /* INFO */
 
     .info {
         gap: 7px;
-        padding: 10px 12px;
+        padding: 10px 12px
     }
 
     .info a {
-        font-size: 12px;
+        font-size: 12px
     }
 
     /* NAVBAR */
@@ -383,35 +310,35 @@ header #mobileLogo {
     .navBar {
         height: 92px;
         padding: 0 14px;
-        gap: 8px;
+        gap: 8px
     }
 
     /* LOGO MOBILE - REDUCAO DE 17% */
 
     header #mobileLogo {
-        width: clamp(99.6px, 39.84vw, 199.2px);
+        width: clamp(99.6px, 39.84vw, 199.2px)
     }
 
     /* NAVBAR RIGHT */
 
     .navRight {
-        gap: 10px;
+        gap: 10px
     }
 
     /* MENU TOGGLE */
 
     .menuToggle {
         width: 28px;
-        height: 28px;
+        height: 28px
     }
 
     .menuIcon {
-        font-size: 24px;
+        font-size: 24px
     }
 
     /* MENU ABERTO */
 
     .menu.open {
-        padding: 12px 16px;
+        padding: 12px 16px
     }
 }

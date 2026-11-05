@@ -1,80 +1,103 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    padding: 0
 }
 
 html {
     scroll-behavior: smooth;
-
-    scroll-padding-top: var(--headerOffset, 140px);
+    scroll-padding-top: var(--headerOffset, 140px)
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-
     --green: #4e9c39;
     --lightGreen: #a0c545;
     --darkGreen: #3e7d2a;
     --grey: #373e3d;
     --black: #0a0a0a;
     --white: #fcfcfc;
+    font-family: Arial, Helvetica, sans-serif
 }
 
+/* Acessibilidade */
 
-/* WHATSAPP FLUTUANTE */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid #327a2a;
+    outline-offset: 3px
+}
+
+.skipLink {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 5000;
+    padding: 10px 14px;
+    color: var(--white);
+    background: var(--darkGreen);
+    border-radius: 5px;
+    text-decoration: none;
+    transform: translateY(-150%);
+    transition: transform .2s ease
+}
+
+.skipLink:focus {
+    transform: translateY(0)
+}
+
+/* WhatsApp flutuante */
 
 .floatingWhatsapp {
     position: fixed;
-
     right: 28px;
     bottom: 28px;
-
     width: 58px;
     height: 58px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
-    text-decoration: none;
-
     color: var(--white);
-    background-color: #2fbf35;
-
+    background-color: var(--darkGreen);
     border-radius: 50%;
-
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.22);
-
+    box-shadow: 0 5px 18px rgba(0, 0, 0, .22);
+    text-decoration: none;
     z-index: 900;
-
-    transition: all 0.3s ease-in-out;
+    transition: all .3s ease-in-out
 }
 
 .floatingWhatsapp i {
-    font-size: 32px;
+    font-size: 32px
 }
 
 .floatingWhatsapp:hover {
-    transform: translateY(-3px);
-
-    background-color: var(--darkGreen);
+    background-color: #315f23;
+    transform: translateY(-3px)
 }
 
-
-/* RESPONSIVIDADE */
-
-@media (max-width: 600px) {
-
+@media(max-width:600px) {
     .floatingWhatsapp {
         right: 18px;
         bottom: 18px;
-
         width: 54px;
-        height: 54px;
+        height: 54px
     }
 
     .floatingWhatsapp i {
-        font-size: 29px;
+        font-size: 29px
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    html {
+        scroll-behavior: auto
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important
     }
 }

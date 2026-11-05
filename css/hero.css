@@ -2,15 +2,12 @@
 
 .hero {
     position: relative;
-
     width: 100%;
     height: 568px;
-
     overflow: hidden;
-
     /* Agora cada slide tem sua propria imagem de fundo. */
     background-image: none;
-    background-color: var(--black);
+    background-color: var(--black)
 }
 
 /* CARROSSEL */
@@ -18,49 +15,43 @@
 .heroTrack {
     position: absolute;
     inset: 0;
-
     width: 100%;
     height: 100%;
-
     display: flex;
-
-    transition: transform 0.65s ease-in-out;
+    transition: transform 0.65s ease-in-out
 }
 
 .heroSlide {
     position: relative;
-
     width: 100%;
     min-width: 0;
     height: 100%;
-
     flex: 0 0 100%;
-
     display: flex;
     align-items: center;
-
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat
 }
 
 /* IMAGENS DESKTOP */
 
 .heroSlideOne {
-    background-image: url('../assets/hero_banner.avif');
+    background-image: url("../assets/hero_banner.avif")
 }
 
 .heroSlideTwo {
-    background-image: url('../assets/hero_banner2.avif');
+    background-image: url("../assets/hero_banner2.avif")
 }
 
 /* Escurece apenas a lateral do banner de aniversario para manter a leitura. */
+
 .heroSlideTwo::before {
     content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.64), rgba(0, 0, 0, 0.16) 58%, transparent 85%);
-    pointer-events: none;
+    pointer-events: none
 }
 
 /* CONTEUDO DE CADA BANNER */
@@ -68,96 +59,84 @@
 .heroContent {
     position: relative;
     z-index: 1;
-
     width: 100%;
     max-width: 1600px;
-
     margin: 0 auto;
     padding-left: 72px;
-
-    color: var(--white);
+    color: var(--white)
 }
 
 .heroContent h1 {
     max-width: 650px;
-
     font-size: 42px;
     line-height: 1.18;
-    font-weight: 400;
+    font-weight: 400
 }
 
 .heroContent h1 strong {
-    font-weight: 700;
+    font-weight: 700
 }
 
 .heroContent h1 span {
     color: var(--green);
-    font-weight: 600;
+    font-weight: 600
 }
 
 .heroContent p {
     max-width: 620px;
-
     margin-top: 16px;
-
     font-size: 18px;
-    line-height: 1.4;
+    line-height: 1.4
 }
 
 .heroButtons {
     display: flex;
     align-items: center;
     gap: 24px;
-
-    margin-top: 42px;
+    margin-top: 42px
 }
 
 .heroButtons a {
     min-width: 180px;
     height: 52px;
-
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-
     text-decoration: none;
-
     font-size: 15px;
     font-weight: 600;
-
     border-radius: 4px;
-
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out
 }
 
 .heroWhatsapp,
 .heroPrimary {
     color: var(--white);
-    background-color: var(--green);
+    background-color: var(--darkGreen)
 }
 
 .heroWhatsapp:hover,
 .heroPrimary:hover {
-    background-color: var(--darkGreen);
+    background-color: #315f23
 }
 
 .heroWhatsapp i,
 .heroPrimary i,
 .heroSecondary i {
-    font-size: 19px;
+    font-size: 19px
 }
 
 .heroServices,
 .heroSecondary {
     color: var(--white);
-    border: 1px solid var(--white);
+    border: 1px solid var(--white)
 }
 
 .heroServices:hover,
 .heroSecondary:hover {
     color: var(--black);
-    background-color: var(--white);
+    background-color: var(--white)
 }
 
 /* DOTS */
@@ -165,65 +144,68 @@
 .heroDots {
     position: absolute;
     z-index: 3;
-
     left: 50%;
     bottom: 22px;
-
     transform: translateX(-50%);
-
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 10px
 }
 
 .heroDot {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 50%;
+    cursor: pointer
+}
+
+.heroDot::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 11px;
     height: 11px;
-
-    padding: 0;
-
-    background-color: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: rgba(255,255,255,.7);
+    border: 1px solid rgba(0,0,0,.2);
     border-radius: 50%;
-
-    cursor: pointer;
-
-    transition: all 0.3s ease-in-out;
+    transform: translate(-50%,-50%);
+    transition: all .3s ease-in-out
 }
 
-.heroDot.active {
+.heroDot.active::before {
     background-color: var(--green);
-    transform: scale(1.2);
-}
-
-.heroDot:focus-visible {
-    outline: 2px solid var(--white);
-    outline-offset: 4px;
+    transform: translate(-50%,-50%) scale(1.2)
 }
 
 /* RESPONSIVIDADE */
 
-@media (max-width: 968px) {
-
+@media(max-width:968px) {
     .hero {
-        height: 600px;
+        height: 600px
     }
 
     .heroSlide {
-        background-position: 65% center;
+        background-position: 65% center
     }
 
     /* IMAGENS MOBILE */
+
     .heroSlideOne {
-        background-image: url('../assets/mobile_hero_banner.avif');
+        background-image: url("../assets/mobile_hero_banner.avif")
     }
 
     .heroSlideTwo {
-        background-image: url('../assets/mobile_hero_banner2.avif');
+        background-image: url("../assets/mobile_hero_banner2.avif")
     }
 
     /* Mesmo tratamento de contraste que o hero mobile original. */
+
     .heroSlide::before,
     .heroSlideTwo::before {
         content: "";
@@ -235,28 +217,27 @@
             rgba(0, 0, 0, 0.72) 46%,
             rgba(0, 0, 0, 0.18) 100%
         );
-        pointer-events: none;
+        pointer-events: none
     }
 
     .heroContent h1 {
         max-width: 500px;
-        font-size: 38px;
+        font-size: 38px
     }
 
     .heroContent p {
         max-width: 470px;
-        font-size: 17px;
+        font-size: 17px
     }
 }
 
-@media (max-width: 600px) {
-
+@media(max-width:600px) {
     .hero {
-        height: 600px;
+        height: 600px
     }
 
     .heroSlide {
-        background-position: 65% center;
+        background-position: 65% center
     }
 
     .heroSlide::before,
@@ -266,56 +247,53 @@
             rgba(0, 0, 0, 0.94) 0%,
             rgba(0, 0, 0, 0.72) 62%,
             rgba(0, 0, 0, 0.25) 100%
-        );
+        )
     }
 
     .heroContent {
-        padding: 0 20px;
+        padding: 0 20px
     }
 
     .heroContent h1 {
         max-width: 360px;
         font-size: 34px;
-        line-height: 1.25;
+        line-height: 1.25
     }
 
     .heroContent p {
         max-width: 345px;
         margin-top: 24px;
         font-size: 16px;
-        line-height: 1.55;
+        line-height: 1.55
     }
 
     .heroButtons {
         max-width: 345px;
-
         flex-direction: column;
         align-items: stretch;
         gap: 14px;
-
-        margin-top: 28px;
+        margin-top: 28px
     }
 
     .heroButtons a {
         width: 100%;
-        height: 54px;
+        height: 54px
     }
 
     .heroDots {
-        bottom: 16px;
+        bottom: 16px
     }
 }
 
-@media (max-width: 390px) {
-
+@media(max-width:390px) {
     .heroContent h1 {
-        font-size: 31px;
+        font-size: 31px
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media(prefers-reduced-motion:reduce) {
     .heroTrack,
     .heroDot {
-        transition: none;
+        transition: none
     }
 }

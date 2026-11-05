@@ -1,220 +1,81 @@
 const menuToggle = document.querySelector('.menuToggle');
 const menu = document.querySelector('.menu');
+const menuLinks = document.querySelectorAll(".menu a[href^='#']");
+const header = document.querySelector('header');
 
-
-/* ========================================
-   MENU MOBILE
-======================================== */
-
+/* MENU MOBILE */
 menuToggle.addEventListener('click', () => {
-
-    menu.classList.toggle('open');
-
-    menuToggle.classList.toggle('open');
+    const isOpen = menu.classList.toggle('open');
+    menuToggle.classList.toggle('open', isOpen);
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
 });
 
-
-const menuLinks = document.querySelectorAll(
-    ".menu a[href^='#']"
-);
-
-
 menuLinks.forEach(link => {
-
     link.addEventListener('click', () => {
-
         menu.classList.remove('open');
-
         menuToggle.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menu');
     });
 });
 
-
-/* ========================================
-   NAVEGAÇÃO ATIVA POR SEÇÃO
-======================================== */
-
+/* NAVEGAÇÃO ATIVA POR SEÇÃO */
 function updateActiveSection() {
-
-    const header = document.querySelector('header');
-
-
-    const headerHeight = header
-        ? header.offsetHeight
-        : 0;
-
-
-    /*
-        Linha imaginária usada para decidir
-        qual seção está ativa.
-
-        Ela fica um pouco abaixo do header.
-    */
-
-    const activationPoint =
-        window.scrollY +
-        headerHeight +
-        100;
-
-
+    const headerHeight = header ? header.offsetHeight : 0;
+    const activationPoint = window.scrollY + headerHeight + 100;
     let currentSection = null;
 
-
     menuLinks.forEach(link => {
-
         const href = link.getAttribute('href');
+        if (!href || href === '#') return;
 
+        const section = document.querySelector(href);
+        if (!section) return;
 
-        if (!href || href === '#') {
-            return;
-        }
-
-
-        const section =
-            document.querySelector(href);
-
-
-        if (!section) {
-            return;
-        }
-
-
-        /*
-            Se o topo da seção já passou
-            pelo ponto de ativação,
-            ela se torna a seção atual.
-        */
-
-        if (
-            section.offsetTop <=
-            activationPoint
-        ) {
-
+        if (section.offsetTop <= activationPoint) {
             currentSection = section;
         }
     });
 
-
-    /*
-        Se estiver praticamente no final
-        da página, ativa a última seção
-        existente no menu.
-    */
-
-    const isAtBottom =
-        window.innerHeight +
-        window.scrollY >=
-        document.documentElement.scrollHeight - 5;
-
+    const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 5;
 
     if (isAtBottom) {
+        for (let i = menuLinks.length - 1; i >= 0; i--) {
+            const href = menuLinks[i].getAttribute('href');
+            if (!href || href === '#') continue;
 
-        for (
-            let i = menuLinks.length - 1;
-            i >= 0;
-            i--
-        ) {
-
-            const href =
-                menuLinks[i].getAttribute('href');
-
-
-            if (!href || href === '#') {
-                continue;
-            }
-
-
-            const section =
-                document.querySelector(href);
-
-
+            const section = document.querySelector(href);
             if (section) {
-
                 currentSection = section;
-
                 break;
             }
         }
     }
 
-
-    /* REMOVE TODOS OS ACTIVE */
-
-    menuLinks.forEach(link => {
-
-        link.classList.remove('active');
-    });
-
-
-    /* ATIVA O LINK DA SEÇÃO ATUAL */
+    menuLinks.forEach(link => link.classList.remove('active'));
 
     if (currentSection) {
-
-        const activeLink =
-            document.querySelector(
-                `.menu a[href="#${currentSection.id}"]`
-            );
-
-
-        if (activeLink) {
-
-            activeLink.classList.add('active');
-        }
+        const activeLink = document.querySelector(`.menu a[href="#${currentSection.id}"]`);
+        if (activeLink) activeLink.classList.add('active');
     }
 }
 
-
-/* ========================================
-   EVENTOS
-======================================== */
-
-window.addEventListener(
-    'scroll',
-    updateActiveSection,
-    {
-        passive: true
-    }
-);
-
-
-window.addEventListener(
-    'resize',
-    updateActiveSection
-);
-
-
-/* ESTADO INICIAL */
-
-updateActiveSection();
-
-/* ========================================
-   OFFSET DO HEADER PARA NAVEGAÇÃO
-======================================== */
-
-const header = document.querySelector('header');
-
+/* OFFSET DO HEADER PARA NAVEGAÇÃO */
 function updateHeaderOffset() {
-
-    if (!header) {
-        return;
-    }
-
-    const headerHeight = header.offsetHeight;
+    if (!header) return;
 
     document.documentElement.style.setProperty(
         '--headerOffset',
-        `${headerHeight + 15}px`
+        `${header.offsetHeight + 15}px`
     );
 }
 
-window.addEventListener(
-    'load',
-    updateHeaderOffset
-);
+/* EVENTOS */
+window.addEventListener('scroll', updateActiveSection, { passive: true });
+window.addEventListener('resize', updateActiveSection);
+window.addEventListener('load', updateHeaderOffset);
+window.addEventListener('resize', updateHeaderOffset);
 
-window.addEventListener(
-    'resize',
-    updateHeaderOffset
-);
-
+updateActiveSection();
 updateHeaderOffset();

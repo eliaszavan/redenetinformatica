@@ -2,295 +2,251 @@
 
 .services {
     width: 100%;
-
     height: auto;
-
     box-sizing: border-box;
-
     padding: 38px 24px 34px;
     margin-top: 16px;
-
-    background-color: var(--white);
+    background-color: var(--white)
 }
 
 .servicesTitle {
-    text-align: center;
+    text-align: center
 }
 
 .servicesTitle span {
-    color: var(--green);
-
+    color: var(--darkGreen);
     font-size: 13px;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 1px
 }
 
 .servicesTitle h2 {
     margin-top: 10px;
-
     color: var(--black);
-
     font-size: 30px;
-    line-height: 1.2;
+    line-height: 1.2
 }
 
 .titleLine {
-    display: none;
+    display: none
 }
-
 
 /* CARROSSEL */
 
 .servicesCarousel {
     width: 100%;
     max-width: 1200px;
-
     margin: 40px auto 0;
-
     display: flex;
     align-items: center;
-
-    gap: 18px;
+    gap: 18px
 }
 
 .servicesSlider {
     width: 100%;
     min-width: 0;
-
-    overflow: hidden;
+    overflow: hidden
 }
 
 .servicesTrack {
     display: flex;
-
     gap: 24px;
-
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out
 }
-
 
 /* CARD */
 
 .serviceCard {
     box-sizing: border-box;
     min-width: calc((100% - 48px) / 3);
-
     flex-shrink: 0;
-
-    padding: 0 22px;
+    padding: 0 22px
 }
 
 .serviceText {
-    min-width: 0;
+    min-width: 0
 }
 
 .serviceIcon img {
     height: 100px;
-
     display: block;
-
-    color: var(--green);
+    color: var(--green)
 }
 
 .serviceIcon i {
     font-size: 42px;
-    font-weight: 400;
+    font-weight: 400
 }
 
 .serviceCard h3 {
     margin-top: 14px;
-
     color: var(--black);
-
-    font-size: 17px;
+    font-size: 17px
 }
 
 .serviceCard p {
     max-width: 270px;
-
     margin-top: 10px;
-
     color: #303030;
-
     font-size: 14px;
     line-height: 1.55;
-
     white-space: normal;
-    overflow-wrap: break-word;
+    overflow-wrap: break-word
 }
 
-.serviceCard a {
+.serviceMore {
     display: inline-flex;
     align-items: center;
-
     gap: 8px;
-
     margin-top: 16px;
-
+    min-height: 28px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    font-family: inherit;
     text-decoration: none;
-    color: var(--green);
-
+    color: var(--darkGreen);
+    cursor: pointer;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 600
 }
 
-.serviceCard a i {
-    font-size: 11px;
+.serviceMore i {
+    font-size: 11px
 }
-
 
 /* SETAS */
 
 .serviceArrow {
     width: 32px;
-
     flex-shrink: 0;
-
     background: transparent;
     border: none;
-
     color: var(--green);
-
     font-size: 30px;
-
     cursor: pointer;
-
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out
 }
 
 .serviceArrow:hover {
     color: var(--darkGreen);
-
-    transform: scale(1.1);
+    transform: scale(1.1)
 }
 
 .serviceArrow:disabled {
     opacity: 0.3;
     cursor: default;
-    transform: none;
+    transform: none
 }
-
 
 /* DOTS */
 
 .serviceDots {
     margin-top: 26px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
-    gap: 8px;
+    gap: 8px
 }
 
 .serviceDot {
+    position: relative;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer
+}
+
+.serviceDot::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 9px;
     height: 9px;
-
-    padding: 0;
-
-    border: none;
-    border-radius: 50%;
-
     background-color: #cccccc;
-
-    cursor: pointer;
-
-    transition: all 0.3s ease-in-out;
+    border-radius: 50%;
+    transform: translate(-50%,-50%);
+    transition: all .3s ease-in-out
 }
 
-.serviceDot.active {
+.serviceDot.active::before {
     background-color: var(--green);
-
-    transform: scale(1.25);
+    transform: translate(-50%,-50%) scale(1.25)
 }
-
 
 /* RESPONSIVIDADE */
 
-@media (max-width: 1200px) {
-
+@media(max-width:1200px) {
     .servicesCarousel {
-        max-width: 900px;
+        max-width: 900px
     }
 
     .servicesTrack {
-        gap: 24px;
+        gap: 24px
     }
 
     .serviceCard {
         min-width: calc((100% - 24px) / 2);
-
-        padding: 0 32px;
+        padding: 0 32px
     }
 
     .serviceCard p {
-        max-width: 320px;
+        max-width: 320px
     }
 }
 
-
 /* TABLET */
 
-@media (max-width: 968px) {
-
+@media(max-width:968px) {
     .services {
-        padding: 46px 32px 20px;
+        padding: 46px 32px 20px
     }
 
     .servicesTitle h2 {
-        font-size: 30px;
+        font-size: 30px
     }
 
     .titleLine {
         width: 58px;
         height: 2px;
-
         display: block;
-
         margin: 22px auto 0;
-
-        background-color: var(--green);
+        background-color: var(--green)
     }
 
     .servicesCarousel {
         max-width: 720px;
-
         margin-top: 12px;
-
-        gap: 14px;
+        gap: 14px
     }
 
     .servicesSlider {
         width: 100%;
         max-width: 620px;
-
-        margin: 0 auto;
+        margin: 0 auto
     }
 
     .servicesTrack {
-        gap: 0;
+        gap: 0
     }
 
     .serviceCard {
         min-width: 100%;
         min-height: 158px;
-
         display: grid;
-
         grid-template-columns: 115px minmax(0, 1fr);
-
         align-items: center;
-
         gap: 28px;
-
         padding: 20px 8px;
-
-        border-bottom: 1px solid #dddddd;
+        border-bottom: 1px solid #dddddd
     }
 
     .serviceCard:last-child {
-        border-bottom: none;
+        border-bottom: none
     }
 
     /* ÁREA PADRONIZADA DO ÍCONE */
@@ -298,87 +254,74 @@
     .serviceIcon {
         width: 115px;
         height: 100px;
-
         display: flex;
         align-items: center;
         justify-content: flex-end;
-
-        flex-shrink: 0;
+        flex-shrink: 0
     }
 
     .serviceIcon img {
         display: block;
-
         width: 100%;
         height: 100%;
         max-width: 100%;
-
         object-fit: contain;
-        object-position: right center;
+        object-position: right center
     }
 
     .serviceIcon i {
-        font-size: 56px;
+        font-size: 56px
     }
 
     .serviceText {
-        min-width: 0;
+        min-width: 0
     }
 
     .serviceCard h3 {
         margin-top: 0;
-
-        font-size: 19px;
+        font-size: 19px
     }
 
     .serviceCard p {
         max-width: 300px;
-
-        font-size: 15px;
+        font-size: 15px
     }
 
-    .serviceCard a {
+    .serviceMore {
         margin-top: 10px;
-
-        font-size: 15px;
+        font-size: 15px
     }
 
     .serviceArrow {
-        font-size: 26px;
+        font-size: 26px
     }
 }
 
-
 /* CELULAR */
 
-@media (max-width: 600px) {
-
+@media(max-width:600px) {
     .services {
-        padding: 42px 20px 20px;
+        padding: 42px 20px 20px
     }
 
     .servicesTitle span {
-        font-size: 12px;
+        font-size: 12px
     }
 
     .servicesTitle h2 {
         margin-top: 8px;
-
-        font-size: 25px;
+        font-size: 25px
     }
 
     .servicesCarousel {
-        gap: 8px;
+        gap: 8px
     }
 
     .serviceCard {
         min-height: 144px;
-
         grid-template-columns: 56px minmax(0, 1fr);
-
         gap: 16px;
-
-        padding: 20px 0;
+        padding: 20px 0
     }
 
     /* ÍCONES COM TAMANHO E ALINHAMENTO FIXOS */
@@ -386,42 +329,38 @@
     .serviceIcon {
         width: 56px;
         height: 56px;
-
         display: flex;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: flex-end
     }
 
     .serviceIcon img {
         display: block;
-
         width: 100%;
         height: 100%;
         max-width: 100%;
-
         object-fit: contain;
-        object-position: right center;
+        object-position: right center
     }
 
     .serviceIcon i {
-        font-size: 42px;
+        font-size: 42px
     }
 
     .serviceCard h3 {
-        font-size: 18px;
+        font-size: 18px
     }
 
     .serviceCard p {
         max-width: 200px;
-
-        font-size: 14px;
+        font-size: 14px
     }
 
     .serviceArrow {
-        font-size: 22px;
+        font-size: 22px
     }
 
     .serviceDots {
-        margin-top: 18px;
+        margin-top: 18px
     }
 }
