@@ -47,11 +47,11 @@
 /* IMAGENS DESKTOP */
 
 .heroSlideOne {
-    background-image: url('../assets/hero_banner.png');
+    background-image: url('../assets/hero_banner.avif');
 }
 
 .heroSlideTwo {
-    background-image: url('../assets/hero_banner2.png');
+    background-image: url('../assets/hero_banner2.avif');
 }
 
 /* Escurece apenas a lateral do banner de aniversario para manter a leitura. */
@@ -216,11 +216,11 @@
 
     /* IMAGENS MOBILE */
     .heroSlideOne {
-        background-image: url('../assets/mobile_hero_banner.png');
+        background-image: url('../assets/mobile_hero_banner.avif');
     }
 
     .heroSlideTwo {
-        background-image: url('../assets/mobile_hero_banner2.png');
+        background-image: url('../assets/mobile_hero_banner2.avif');
     }
 
     /* Mesmo tratamento de contraste que o hero mobile original. */
