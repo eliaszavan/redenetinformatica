@@ -89,7 +89,7 @@
     banner.innerHTML = `
         <h2>Preferências de cookies</h2>
         <p>Usamos cookies opcionais de análise somente com sua autorização para entender visitas e melhorar o site. Você pode recusar sem perder funcionalidades.</p>
-        <a href="cookies.html">Leia nossa Política de Cookies</a>
+        <a href="/politica-de-cookies/">Leia nossa Política de Cookies</a>
         <div class="cookieActions">
             <button class="cookieBtn cookieBtnPrimary" type="button" data-cookie-accept>Aceitar</button>
             <button class="cookieBtn cookieBtnSecondary" type="button" data-cookie-reject>Rejeitar</button>
@@ -119,7 +119,7 @@
                 </div>
                 <input type="checkbox" id="cookieAnalyticsToggle" aria-label="Permitir cookies de estatísticas">
             </div>
-            <p>Veja nossa <a href="cookies.html">Política de Cookies</a> e nossa <a href="privacidade.html">Política de Privacidade</a>.</p>
+            <p>Veja nossa <a href="/politica-de-cookies/">Política de Cookies</a> e nossa <a href="/politica-de-privacidade/">Política de Privacidade</a>.</p>
             <div class="cookieActions">
                 <button class="cookieBtn cookieBtnPrimary" type="button" data-cookie-save>Salvar preferências</button>
                 <button class="cookieBtn cookieBtnSecondary" type="button" data-cookie-reject-modal>Rejeitar opcionais</button>
