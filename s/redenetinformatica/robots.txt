@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://redenetinformatica.com.br/sitemap.xml
